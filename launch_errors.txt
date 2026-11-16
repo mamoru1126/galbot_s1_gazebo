@@ -1,0 +1,6 @@
+[gazebo-1] [WARN] [1794844445.124379926] [controller_manager]: The resource manager is not yet initialized, will wait for the robot description to initialize it..
+[gazebo-1] [WARN] [1794844445.130074867] [gz_ros_control]: Waiting RM to load and initialize hardware...
+[gazebo-1] [WARN] [1794844446.037994993] [controller_manager.hardware_component.system.GalbotS1GzSystem]: Executor is not available during hardware component initialization for 'GalbotS1GzSystem'. Skipping node creation!
+[gazebo-1] [WARN] [1794844446.038447249] [controller_manager]: Component 'GalbotS1GzSystem' does not have read or write statistics initialized, skipping registration.
+[gazebo-1] [WARN] [1794844447.171700496] [gz_ros_control]:  Desired controller update period (0.01 s) is slower than the gazebo simulation period (0.001 s).
+[ERROR] [gazebo-1]: process has died [pid 49, exit code -9, cmd 'ruby /opt/ros/jazzy/opt/gz_tools_vendor/bin/gz sim -r -s -v 3 --headless-rendering /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/worlds/table_scene.sdf --force-version 8'].

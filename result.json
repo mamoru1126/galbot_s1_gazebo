@@ -1,0 +1,172 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ready": true,
+      "base": {
+        "x": 2.7675481295150415e-09,
+        "y": -6.179631083525945e-10,
+        "yaw": 4.452198723614944e-10
+      },
+      "objects": [
+        "blue_box",
+        "green_bottle",
+        "red_can"
+      ],
+      "task": {
+        "name": "_startup",
+        "state": "done",
+        "step": "",
+        "error": "",
+        "id": 1
+      },
+      "name": "bringup",
+      "ok": true,
+      "elapsed_s": 11.5
+    },
+    {
+      "cameras": [
+        "head",
+        "overview",
+        "right_wrist"
+      ],
+      "name": "camera_frames",
+      "ok": true,
+      "elapsed_s": 23.5
+    },
+    {
+      "dx": 0.163,
+      "name": "drive_forward",
+      "ok": true,
+      "elapsed_s": 28.6
+    },
+    {
+      "max_joint_change": 0.109,
+      "name": "jog_right_arm",
+      "ok": true,
+      "elapsed_s": 31.9
+    },
+    {
+      "name": "gripper_close_open",
+      "ok": true,
+      "elapsed_s": 44.9
+    },
+    {
+      "task": {
+        "name": "demo",
+        "state": "done",
+        "step": "",
+        "error": "",
+        "id": 2
+      },
+      "red_can": {
+        "x": 1.4500330971000477,
+        "y": 0.09999367225425108,
+        "z": 0.8180000016302533,
+        "yaw": 8.354366965852922e-07
+      },
+      "base": {
+        "x": 0.015910377797257024,
+        "y": 0.009557535204452947,
+        "yaw": -3.116948431714021e-07
+      },
+      "log": [
+        "15:56:00 置く位置の上へ",
+        "15:56:01 下降",
+        "15:56:09 リリース",
+        "15:56:09 赤い缶 を離しました",
+        "15:56:13 アームを上げる",
+        "15:56:22 準備姿勢へ",
+        "15:56:23 スタート位置へ戻る",
+        "15:56:48 タスク demo 完了"
+      ],
+      "name": "demo_pick_place_red_can",
+      "ok": true,
+      "elapsed_s": 167.0
+    },
+    {
+      "moved": [],
+      "name": "other_objects_undisturbed",
+      "ok": true,
+      "elapsed_s": 167.0
+    },
+    {
+      "task": {
+        "name": "pick",
+        "state": "done",
+        "step": "",
+        "error": "",
+        "id": 3
+      },
+      "blue_box": {
+        "x": 1.4491486814732164,
+        "y": 0.35142185643961815,
+        "z": 1.0076083961130253,
+        "yaw": -0.055677876118311445
+      },
+      "holding": {
+        "left": "blue_box",
+        "right": null
+      },
+      "name": "pick_blue_box_left_arm",
+      "ok": true,
+      "elapsed_s": 221.1
+    },
+    {
+      "task": {
+        "name": "place",
+        "state": "done",
+        "step": "",
+        "error": "",
+        "id": 4
+      },
+      "blue_box": {
+        "x": 1.4500204890970294,
+        "y": 0.3500166039060932,
+        "z": 0.7999999171088672,
+        "yaw": -0.056222924442311424
+      },
+      "name": "place_blue_box_origin",
+      "ok": true,
+      "elapsed_s": 250.7
+    },
+    {
+      "moved": [],
+      "red_can": {
+        "x": 1.4500330971000477,
+        "y": 0.09999367225425108,
+        "z": 0.8180000016302533,
+        "yaw": 8.354366965852922e-07
+      },
+      "name": "scene_intact_after_left_arm",
+      "ok": true,
+      "elapsed_s": 250.7
+    },
+    {
+      "task": {
+        "name": "reset_scene",
+        "state": "done",
+        "step": "",
+        "error": "",
+        "id": 5
+      },
+      "name": "reset_scene",
+      "ok": true,
+      "elapsed_s": 255.7
+    }
+  ],
+  "final_log": [
+    "15:57:39 胴を 6 cm 上げて他の物の上を通します",
+    "15:57:43 タスク pick 完了",
+    "15:57:43 青い箱 を元の位置へ運びます",
+    "15:57:45 胴を下げる",
+    "15:57:49 置く位置の上へ",
+    "15:57:51 下降",
+    "15:57:59 リリース",
+    "15:57:59 青い箱 を離しました",
+    "15:58:03 アームを上げる",
+    "15:58:12 タスク place 完了",
+    "15:58:13 シーンをリセット",
+    "15:58:17 タスク reset_scene 完了"
+  ]
+}

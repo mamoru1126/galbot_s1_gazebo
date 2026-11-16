@@ -1,0 +1,12 @@
+==== diagnostics ====
+/parameter_events
+/rosout
+wheel_controller         velocity_controllers/JointGroupVelocityController  active
+steering_controller      position_controllers/JointGroupPositionController  active
+head_controller          position_controllers/JointGroupPositionController  active
+torso_controller         position_controllers/JointGroupPositionController  active
+right_gripper_controller position_controllers/JointGroupPositionController  active
+left_gripper_controller  position_controllers/JointGroupPositionController  active
+right_arm_controller     position_controllers/JointGroupPositionController  active
+left_arm_controller      position_controllers/JointGroupPositionController  active
+joint_state_broadcaster  joint_state_broadcaster/JointStateBroadcaster      active

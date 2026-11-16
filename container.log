@@ -1,0 +1,13 @@
+[ci] bringup                      OK  {"ready": true, "base": {"x": 2.7675481295150415e-09, "y": -6.179631083525945e-10, "yaw": 4.452198723614944e-10}, "objects": ["blue_box", "green_bottle", "red_can"], "task": {"name": "_startup", "state": "done", "step": "", "error": "", "id": 1}, "elapsed_s": 11.5}
+[ci] camera_frames                OK  {"cameras": ["head", "overview", "right_wrist"], "elapsed_s": 23.5}
+[ci] drive_forward                OK  {"dx": 0.163, "elapsed_s": 28.6}
+[ci] jog_right_arm                OK  {"max_joint_change": 0.109, "elapsed_s": 31.9}
+[ci] gripper_close_open           OK  {"elapsed_s": 44.9}
+[ci] demo_pick_place_red_can      OK  {"task": {"name": "demo", "state": "done", "step": "", "error": "", "id": 2}, "red_can": {"x": 1.4500330971000477, "y": 0.09999367225425108, "z": 0.8180000016302533, "yaw": 8.354366965852922e-07}, "base": {"x": 0.015910377797257024, "y": 0.009557535204452947, "yaw": -3.116948431714021e-07}, "log": ["15:56:00 \u7f6e\u304f\u4f4d\u7f6e\u306e\u4e0a\u3078", "15:56:01 \u4e0b\u964d", "15:56:09 \u30ea\u30ea\u30fc\u30b9", "15:56:09 \u8d64\u3044\u7f36 \u3092\u96e2\u3057\u307e\u3057\u305f", "15:56:13 \u30a2\u30fc\u30e0\u3092\u4e0a\u3052\u308b", "15:56:22 \u6e96\u5099\u59ff\u52e2\u3078", "15:56:23 \u30b9\u30bf\u30fc\u30c8\u4f4d\u7f6e\u3078\u623b\u308b", "15:56:48 \u30bf\u30b9\u30af demo \u5b8c\u4e86"], "elapsed_s": 167.0}
+[ci] other_objects_undisturbed    OK  {"moved": [], "elapsed_s": 167.0}
+[ci] pick_blue_box_left_arm       OK  {"task": {"name": "pick", "state": "done", "step": "", "error": "", "id": 3}, "blue_box": {"x": 1.4491486814732164, "y": 0.35142185643961815, "z": 1.0076083961130253, "yaw": -0.055677876118311445}, "holding": {"left": "blue_box", "right": null}, "elapsed_s": 221.1}
+[ci] place_blue_box_origin        OK  {"task": {"name": "place", "state": "done", "step": "", "error": "", "id": 4}, "blue_box": {"x": 1.4500204890970294, "y": 0.3500166039060932, "z": 0.7999999171088672, "yaw": -0.056222924442311424}, "elapsed_s": 250.7}
+[ci] scene_intact_after_left_arm  OK  {"moved": [], "red_can": {"x": 1.4500330971000477, "y": 0.09999367225425108, "z": 0.8180000016302533, "yaw": 8.354366965852922e-07}, "elapsed_s": 250.7}
+[ci] reset_scene                  OK  {"task": {"name": "reset_scene", "state": "done", "step": "", "error": "", "id": 5}, "elapsed_s": 255.7}
+[ci] RESULT PASS
+exit code 0

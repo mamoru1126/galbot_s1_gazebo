@@ -1,0 +1,492 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-11-16-15-54-02-394571-ip-10-0-140-89-24
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [49]
+[INFO] [parameter_bridge-2]: process started with pid [50]
+[INFO] [robot_state_publisher-3]: process started with pid [51]
+[INFO] [create-4]: process started with pid [52]
+[INFO] [base_controller.py-5]: process started with pid [54]
+[INFO] [commander.py-6]: process started with pid [55]
+[INFO] [camera_relay.py-7]: process started with pid [56]
+[INFO] [rosbridge_websocket-8]: process started with pid [57]
+[INFO] [web_server.py-9]: process started with pid [60]
+[robot_state_publisher-3] [INFO] [1794844442.818006935] [robot_state_publisher]: Robot initialized
+[create-4] [INFO] [1794844442.837658598] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[web_server.py-9] [galbot web] http://ip-10-0-140-89:8000  (or http://localhost:8000)  serving /ws/install/galbot_s1_web/share/galbot_s1_web/web
+[base_controller.py-5] [INFO] [1794844443.126256502] [galbot_base_controller]: base controller ready
+[gazebo-1] [1;32m[Msg] [0m[1;32mGazebo Sim Server v[0m[1;32m8.11.0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoading SDF world file[[0m[1;32m/ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/worlds/table_scene.sdf[0m[1;32m].[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing entity system service on [[0m[1;32m/[0m[1;32mentity/system/add[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/create_multiple[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/create_multiple/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/remove[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/remove/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_pose[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_pose/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_pose_vector[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_pose_vector/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/light_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/light_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_physics[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_physics/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_spherical_coordinates[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/set_spherical_coordinates/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/enable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/enable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/disable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/disable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/visual_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/visual_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/wheel_slip[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/galbot_table_world/wheel_slip/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32m[galbot_sim_helper] ready[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry on [[0m[1;32m/galbot/objects/red_can/odom[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry with covariance on [[0m[1;32m/model/red_can/odometry_with_covariance[0m[1;32m][0m[1;32m[0m
+[commander.py-6] [INFO] [1794844443.215627593] [galbot_commander]: commander started (ROS2)
+[rosbridge_websocket-8] [INFO] [1794844443.250760745] [rosbridge_websocket]: Rosbridge WebSocket server started on port 9090
+[create-4] [INFO] [1794844443.327847418] [ros_gz_sim]: Entity creation successful.
+[camera_relay.py-7] [INFO] [1794844443.345421302] [galbot_camera_relay]: camera relay: overview, head, right_wrist, left_wrist
+[INFO] [create-4]: process has finished cleanly [pid 52]
+[INFO] [spawner-10]: process started with pid [188]
+[spawner-10] [INFO] [1794844443.641842353] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[parameter_bridge-2] [INFO] [1794844443.944373973] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.945268493] [galbot_gz_bridge]: Creating ROS->GZ Bridge: [/galbot/base/cmd_vel (geometry_msgs/msg/Twist) -> /galbot/base/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.947042634] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/ground_truth/odom (gz.msgs.Odometry) -> /galbot/ground_truth/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.949181884] [galbot_gz_bridge]: Creating ROS->GZ Bridge: [/galbot/sim/attach (std_msgs/msg/String) -> /galbot/sim/attach (gz.msgs.StringMsg)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.950026219] [galbot_gz_bridge]: Creating ROS->GZ Bridge: [/galbot/sim/detach (std_msgs/msg/String) -> /galbot/sim/detach (gz.msgs.StringMsg)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.950766173] [galbot_gz_bridge]: Creating ROS->GZ Bridge: [/galbot/sim/set_model_pose (std_msgs/msg/String) -> /galbot/sim/set_model_pose (gz.msgs.StringMsg)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.951604725] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/sim/attached (gz.msgs.StringMsg) -> /galbot/sim/attached (std_msgs/msg/String)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.952319445] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/objects/red_can/odom (gz.msgs.Odometry) -> /galbot/objects/red_can/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.953184624] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/objects/green_bottle/odom (gz.msgs.Odometry) -> /galbot/objects/green_bottle/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.953719031] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/objects/blue_box/odom (gz.msgs.Odometry) -> /galbot/objects/blue_box/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.954257555] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/overview_camera/image_raw (gz.msgs.Image) -> /galbot/overview_camera/image_raw (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.955838509] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/overview_camera/camera_info (gz.msgs.CameraInfo) -> /galbot/overview_camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.956532220] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/head_camera/image_raw (gz.msgs.Image) -> /galbot/head_camera/image_raw (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.957047949] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/head_camera/camera_info (gz.msgs.CameraInfo) -> /galbot/head_camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.957564267] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/right_wrist_camera/image_raw (gz.msgs.Image) -> /galbot/right_wrist_camera/image_raw (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.958073754] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/right_wrist_camera/camera_info (gz.msgs.CameraInfo) -> /galbot/right_wrist_camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.958570917] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/left_wrist_camera/image_raw (gz.msgs.Image) -> /galbot/left_wrist_camera/image_raw (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.959096757] [galbot_gz_bridge]: Creating GZ->ROS Bridge: [/galbot/left_wrist_camera/camera_info (gz.msgs.CameraInfo) -> /galbot/left_wrist_camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1794844443.959699493] [galbot_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[gazebo-1] [INFO] [1794844445.113612383] [gz_ros_control]: Loading controller_manager
+[gazebo-1] [INFO] [1794844445.124358931] [controller_manager]: Using ROS clock for triggering controller manager cycles.
+[gazebo-1] [WARN] [1794844445.124379926] [controller_manager]: The resource manager is not yet initialized, will wait for the robot description to initialize it..
+[gazebo-1] [INFO] [1794844445.130026499] [controller_manager]: Subscribing to '/robot_description' topic for robot description.
+[gazebo-1] [WARN] [1794844445.130074867] [gz_ros_control]: Waiting RM to load and initialize hardware...
+[gazebo-1] [INFO] [1794844446.031843829] [controller_manager]: Received robot description from topic.
+[gazebo-1] [INFO] [1794844446.031955754] [controller_manager]: Enforcing command limits is disabled. Command limits from URDF will be ignored.
+[gazebo-1] [INFO] [1794844446.037066648] [gz_ros_control]: The position_proportional_gain has been set to: 0.1
+[gazebo-1] [INFO] [1794844446.037126495] [gz_ros_control]: Loading joint: torso_lift_joint1
+[gazebo-1] [INFO] [1794844446.037132181] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037136955] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037149369] [gz_ros_control]: 			 found initial value: 0.200000
+[gazebo-1] [INFO] [1794844446.037153970] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037160922] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037165279] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037176871] [gz_ros_control]: Loading joint: head_joint1
+[gazebo-1] [INFO] [1794844446.037179462] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037181634] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037184105] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037186757] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037188795] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037190749] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037196982] [gz_ros_control]: Loading joint: head_joint2
+[gazebo-1] [INFO] [1794844446.037199927] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037202111] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037204441] [gz_ros_control]: 			 found initial value: -0.350000
+[gazebo-1] [INFO] [1794844446.037207007] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037209131] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037210996] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037216778] [gz_ros_control]: Loading joint: left_arm_joint1
+[gazebo-1] [INFO] [1794844446.037219210] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037221175] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037223152] [gz_ros_control]: 			 found initial value: 1.275000
+[gazebo-1] [INFO] [1794844446.037225528] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037227418] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037229225] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037234678] [gz_ros_control]: Loading joint: left_arm_joint2
+[gazebo-1] [INFO] [1794844446.037236828] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037238873] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037241759] [gz_ros_control]: 			 found initial value: 1.355000
+[gazebo-1] [INFO] [1794844446.037243958] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037246114] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037247836] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037253589] [gz_ros_control]: Loading joint: left_arm_joint3
+[gazebo-1] [INFO] [1794844446.037255660] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037257568] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037259456] [gz_ros_control]: 			 found initial value: -0.860000
+[gazebo-1] [INFO] [1794844446.037261612] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037266791] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037268781] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037273863] [gz_ros_control]: Loading joint: left_arm_joint4
+[gazebo-1] [INFO] [1794844446.037275930] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037277815] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037279716] [gz_ros_control]: 			 found initial value: -1.737000
+[gazebo-1] [INFO] [1794844446.037281971] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037283823] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037285652] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037290823] [gz_ros_control]: Loading joint: left_arm_joint5
+[gazebo-1] [INFO] [1794844446.037314739] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037316785] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037318565] [gz_ros_control]: 			 found initial value: -1.659000
+[gazebo-1] [INFO] [1794844446.037320664] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037322670] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037324437] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037329617] [gz_ros_control]: Loading joint: left_arm_joint6
+[gazebo-1] [INFO] [1794844446.037331662] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037333543] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037336952] [gz_ros_control]: 			 found initial value: -0.267000
+[gazebo-1] [INFO] [1794844446.037339290] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037341189] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037342948] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037349243] [gz_ros_control]: Loading joint: left_arm_joint7
+[gazebo-1] [INFO] [1794844446.037351321] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037353073] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037355062] [gz_ros_control]: 			 found initial value: 1.164000
+[gazebo-1] [INFO] [1794844446.037357263] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037359075] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037361028] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037366986] [gz_ros_control]: Loading joint: left_active_joint1
+[gazebo-1] [INFO] [1794844446.037369330] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037371221] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037373184] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037375416] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037377407] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037379222] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037384747] [gz_ros_control]: Loading joint: left_active_joint2
+[gazebo-1] [INFO] [1794844446.037387923] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037389862] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037391661] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037393760] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037395617] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037397355] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037402479] [gz_ros_control]: Loading joint: left_passive_joint
+[gazebo-1] [INFO] [1794844446.037404545] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037406413] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037408213] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037410346] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037412275] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037414065] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037421578] [gz_ros_control]: Loading joint: right_arm_joint1
+[gazebo-1] [INFO] [1794844446.037425658] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037428724] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037431776] [gz_ros_control]: 			 found initial value: -1.275000
+[gazebo-1] [INFO] [1794844446.037434430] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037436396] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037438143] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037444816] [gz_ros_control]: Loading joint: right_arm_joint2
+[gazebo-1] [INFO] [1794844446.037448844] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037450918] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037452771] [gz_ros_control]: 			 found initial value: -1.355000
+[gazebo-1] [INFO] [1794844446.037454895] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037456797] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037458622] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037463587] [gz_ros_control]: Loading joint: right_arm_joint3
+[gazebo-1] [INFO] [1794844446.037465654] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037467463] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037469456] [gz_ros_control]: 			 found initial value: 0.860000
+[gazebo-1] [INFO] [1794844446.037471651] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037473640] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037475693] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037480454] [gz_ros_control]: Loading joint: right_arm_joint4
+[gazebo-1] [INFO] [1794844446.037485610] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037487849] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037492030] [gz_ros_control]: 			 found initial value: 1.737000
+[gazebo-1] [INFO] [1794844446.037494316] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037497598] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037499380] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037506585] [gz_ros_control]: Loading joint: right_arm_joint5
+[gazebo-1] [INFO] [1794844446.037509897] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037511827] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037513560] [gz_ros_control]: 			 found initial value: 1.659000
+[gazebo-1] [INFO] [1794844446.037515702] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037517589] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037519308] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037524700] [gz_ros_control]: Loading joint: right_arm_joint6
+[gazebo-1] [INFO] [1794844446.037526717] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037528682] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037531333] [gz_ros_control]: 			 found initial value: 0.267000
+[gazebo-1] [INFO] [1794844446.037534982] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037537920] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037547625] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037558524] [gz_ros_control]: Loading joint: right_arm_joint7
+[gazebo-1] [INFO] [1794844446.037560616] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037562671] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037564544] [gz_ros_control]: 			 found initial value: -1.164000
+[gazebo-1] [INFO] [1794844446.037566795] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037568636] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037570473] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037576567] [gz_ros_control]: Loading joint: right_active_joint1
+[gazebo-1] [INFO] [1794844446.037578782] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037580655] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037583939] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037586169] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037588131] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037589956] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037595328] [gz_ros_control]: Loading joint: right_active_joint2
+[gazebo-1] [INFO] [1794844446.037597493] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037599369] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037601265] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037603425] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037605394] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037607173] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037612569] [gz_ros_control]: Loading joint: right_passive_joint
+[gazebo-1] [INFO] [1794844446.037614629] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037616513] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037619893] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037622086] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037624029] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037625895] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037631559] [gz_ros_control]: Loading joint: wheel_steering_joint1
+[gazebo-1] [INFO] [1794844446.037633771] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037635668] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037637555] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037639596] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037641470] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037643250] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037650340] [gz_ros_control]: Loading joint: wheel_steering_joint2
+[gazebo-1] [INFO] [1794844446.037652614] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037654452] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037656287] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037658382] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037660195] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037662063] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037668537] [gz_ros_control]: Loading joint: wheel_steering_joint3
+[gazebo-1] [INFO] [1794844446.037672991] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037675138] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037676963] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037679095] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037681106] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037683399] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037689530] [gz_ros_control]: Loading joint: wheel_steering_joint4
+[gazebo-1] [INFO] [1794844446.037691821] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037693791] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037695695] [gz_ros_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1794844446.037697840] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037699772] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037701600] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037706518] [gz_ros_control]: Loading joint: wheel_driving_joint1
+[gazebo-1] [INFO] [1794844446.037708814] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037710805] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037712891] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037714790] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037716985] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037723759] [gz_ros_control]: Loading joint: wheel_driving_joint2
+[gazebo-1] [INFO] [1794844446.037725962] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037727948] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037730345] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037732313] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037734218] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037740011] [gz_ros_control]: Loading joint: wheel_driving_joint3
+[gazebo-1] [INFO] [1794844446.037742109] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037743959] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037745837] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037747707] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037749564] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037755221] [gz_ros_control]: Loading joint: wheel_driving_joint4
+[gazebo-1] [INFO] [1794844446.037762095] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1794844446.037764022] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1794844446.037767171] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037769051] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1794844446.037770820] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1794844446.037968323] [controller_manager]: Initialize hardware 'GalbotS1GzSystem' 
+[gazebo-1] [WARN] [1794844446.037994993] [controller_manager.hardware_component.system.GalbotS1GzSystem]: Executor is not available during hardware component initialization for 'GalbotS1GzSystem'. Skipping node creation!
+[gazebo-1] [INFO] [1794844446.038090059] [controller_manager]: Successful initialization of hardware 'GalbotS1GzSystem'
+[gazebo-1] [INFO] [1794844446.038322733] [controller_manager]: Activating component 'GalbotS1GzSystem'.
+[gazebo-1] [INFO] [1794844446.038332235] [resource_manager]: 'configure' hardware 'GalbotS1GzSystem' 
+[gazebo-1] [INFO] [1794844446.038336376] [gz_ros_control]: System Successfully configured!
+[gazebo-1] [INFO] [1794844446.038339489] [resource_manager]: Successful 'configure' of hardware 'GalbotS1GzSystem'
+[gazebo-1] [INFO] [1794844446.038350473] [resource_manager]: 'activate' hardware 'GalbotS1GzSystem' 
+[gazebo-1] [INFO] [1794844446.038363364] [resource_manager]: Successful 'activate' of hardware 'GalbotS1GzSystem'
+[gazebo-1] [WARN] [1794844446.038447249] [controller_manager]: Component 'GalbotS1GzSystem' does not have read or write statistics initialized, skipping registration.
+[gazebo-1] [INFO] [1794844446.038454470] [controller_manager]: Resource Manager has been successfully initialized. Starting Controller Manager services...
+[gazebo-1] [INFO] [1794844446.397889098] [controller_manager]: Loading controller : 'joint_state_broadcaster' of type 'joint_state_broadcaster/JointStateBroadcaster'
+[gazebo-1] [INFO] [1794844446.397952327] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[gazebo-1] [INFO] [1794844446.402104007] [controller_manager]: Controller 'joint_state_broadcaster' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844446.412959783] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster
+[gazebo-1] [INFO] [1794844446.414006909] [controller_manager]: Configuring controller: 'joint_state_broadcaster'
+[gazebo-1] [INFO] [1794844446.414240029] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[gazebo-1] [INFO] [1794844446.424516533] [controller_manager]: Activating controllers: [ joint_state_broadcaster ]
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing Pose_V (TF) on [[0m[1;32m/galbot/objects/red_can/tf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry on [[0m[1;32m/galbot/objects/green_bottle/odom[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry with covariance on [[0m[1;32m/model/green_bottle/odometry_with_covariance[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing Pose_V (TF) on [[0m[1;32m/galbot/objects/green_bottle/tf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry on [[0m[1;32m/galbot/objects/blue_box/odom[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry with covariance on [[0m[1;32m/model/blue_box/odometry_with_covariance[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing Pose_V (TF) on [[0m[1;32m/galbot/objects/blue_box/tf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoaded level [[0m[1;32mdefault[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world controls on [[0m[1;32m/world/galbot_table_world[0m[1;32m/control], [[0m[1;32m/world/galbot_table_world[0m[1;32m/control/state] and [[0m[1;32m/world/galbot_table_world[0m[1;32m/playback/control][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing GUI information on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mgui/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mWorld [[0m[1;32mgalbot_table_world[0m[1;32m] initialized with [[0m[1;32m1ms[0m[1;32m] physics profile.[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world SDF generation service on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mgenerate_world_sdf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world names on [[0m[1;32m/gazebo/worlds[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path add service on [[0m[1;32m/gazebo/resource_paths/add[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path get service on [[0m[1;32m/gazebo/resource_paths/get[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path resolve service on [[0m[1;32m/gazebo/resource_paths/resolve[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource paths published on [[0m[1;32m/gazebo/resource_paths[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServer control service on [[0m[1;32m/server_control[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /stats, adding root stats topic[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /clock, adding root clock topic[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mVelocityControl subscribing to twist messages on [[0m[1;32m/galbot/base/cmd_vel[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry on [[0m[1;32m/galbot/ground_truth/odom[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing odometry with covariance on [[0m[1;32m/model/galbot_s1/odometry_with_covariance[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mOdometryPublisher publishing Pose_V (TF) on [[0m[1;32m/galbot/ground_truth/tf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoading plugin [[0m[1;32mgz-rendering-ogre2[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing scene information on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mscene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing graph information on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mscene/graph[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mstate[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state (async) on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mstate_async[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing scene information on [[0m[1;32m/world/galbot_table_world/scene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [WARN] [1794844447.171700496] [gz_ros_control]:  Desired controller update period (0.01 s) is slower than the gazebo simulation period (0.001 s).
+[gazebo-1] [1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[gazebo-1] [INFO] [1794844449.447774674] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844449.461397987] [spawner_joint_state_broadcaster]: Configured and activated joint_state_broadcaster
+[commander.py-6] [INFO] [1794844449.461438086] [galbot_commander]: joint states received - ready
+[gazebo-1] [INFO] [1794844449.463867295] [controller_manager]: Loading controller : 'left_arm_controller' of type 'position_controllers/JointGroupPositionController'
+[gazebo-1] [INFO] [1794844449.463931204] [controller_manager]: Loading controller 'left_arm_controller'
+[gazebo-1] [INFO] [1794844449.469160403] [controller_manager]: Controller 'left_arm_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844449.499083625] [spawner_joint_state_broadcaster]: Loaded left_arm_controller
+[gazebo-1] [INFO] [1794844449.499406100] [controller_manager]: Configuring controller: 'left_arm_controller'
+[gazebo-1] [INFO] [1794844449.500986249] [left_arm_controller]: configure successful
+[gazebo-1] [INFO] [1794844449.508949671] [controller_manager]: Activating controllers: [ left_arm_controller ]
+[gazebo-1] [INFO] [1794844449.518003247] [left_arm_controller]: activate successful
+[gazebo-1] [INFO] [1794844449.518037966] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844449.532953646] [spawner_joint_state_broadcaster]: Configured and activated left_arm_controller
+[gazebo-1] [INFO] [1794844449.535496529] [controller_manager]: Loading controller : 'right_arm_controller' of type 'position_controllers/JointGroupPositionController'
+[gazebo-1] [INFO] [1794844449.535519993] [controller_manager]: Loading controller 'right_arm_controller'
+[gazebo-1] [INFO] [1794844449.536094262] [controller_manager]: Controller 'right_arm_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844449.579801790] [spawner_joint_state_broadcaster]: Loaded right_arm_controller
+[gazebo-1] [INFO] [1794844449.581149856] [controller_manager]: Configuring controller: 'right_arm_controller'
+[gazebo-1] [INFO] [1794844449.582284073] [right_arm_controller]: configure successful
+[gazebo-1] [INFO] [1794844449.628078709] [controller_manager]: Activating controllers: [ right_arm_controller ]
+[gazebo-1] [INFO] [1794844449.636028310] [right_arm_controller]: activate successful
+[gazebo-1] [INFO] [1794844449.636205460] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844449.651109206] [spawner_joint_state_broadcaster]: Configured and activated right_arm_controller
+[gazebo-1] [INFO] [1794844449.653010315] [controller_manager]: Loading controller : 'left_gripper_controller' of type 'position_controllers/JointGroupPositionController'
+[gazebo-1] [INFO] [1794844449.653384118] [controller_manager]: Loading controller 'left_gripper_controller'
+[gazebo-1] [INFO] [1794844449.653884085] [controller_manager]: Controller 'left_gripper_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844449.920401936] [spawner_joint_state_broadcaster]: Loaded left_gripper_controller
+[gazebo-1] [INFO] [1794844449.923038260] [controller_manager]: Configuring controller: 'left_gripper_controller'
+[gazebo-1] [INFO] [1794844449.924640630] [left_gripper_controller]: configure successful
+[gazebo-1] [INFO] [1794844449.943479965] [controller_manager]: Activating controllers: [ left_gripper_controller ]
+[gazebo-1] [INFO] [1794844449.967906038] [left_gripper_controller]: activate successful
+[gazebo-1] [INFO] [1794844449.968895351] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844449.993760847] [spawner_joint_state_broadcaster]: Configured and activated left_gripper_controller
+[gazebo-1] [INFO] [1794844449.998893569] [controller_manager]: Loading controller : 'right_gripper_controller' of type 'position_controllers/JointGroupPositionController'
+[gazebo-1] [INFO] [1794844449.998921881] [controller_manager]: Loading controller 'right_gripper_controller'
+[gazebo-1] [INFO] [1794844449.999179205] [controller_manager]: Controller 'right_gripper_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844450.025862978] [spawner_joint_state_broadcaster]: Loaded right_gripper_controller
+[gazebo-1] [INFO] [1794844450.026196700] [controller_manager]: Configuring controller: 'right_gripper_controller'
+[gazebo-1] [INFO] [1794844450.027082958] [right_gripper_controller]: configure successful
+[gazebo-1] [INFO] [1794844450.041614513] [controller_manager]: Activating controllers: [ right_gripper_controller ]
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing entity deletions on [[0m[1;32m/world/galbot_table_world/scene/deletion[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing state changes on [[0m[1;32m/world/galbot_table_world/state[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing pose messages on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mpose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing dynamic pose messages on [[0m[1;32m/world/galbot_table_world[0m[1;32m/[0m[1;32mdynamic_pose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [INFO] [1794844450.117490001] [right_gripper_controller]: activate successful
+[gazebo-1] [INFO] [1794844450.117645728] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844450.131315327] [spawner_joint_state_broadcaster]: Configured and activated right_gripper_controller
+[gazebo-1] [INFO] [1794844450.136451958] [controller_manager]: Loading controller : 'torso_controller' of type 'position_controllers/JointGroupPositionController'
+[gazebo-1] [INFO] [1794844450.136485916] [controller_manager]: Loading controller 'torso_controller'
+[gazebo-1] [INFO] [1794844450.136711295] [controller_manager]: Controller 'torso_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844450.182775709] [spawner_joint_state_broadcaster]: Loaded torso_controller
+[gazebo-1] [INFO] [1794844450.183378591] [controller_manager]: Configuring controller: 'torso_controller'
+[gazebo-1] [INFO] [1794844450.186921466] [torso_controller]: configure successful
+[gazebo-1] [INFO] [1794844450.205909113] [controller_manager]: Activating controllers: [ torso_controller ]
+[gazebo-1] [INFO] [1794844450.211162303] [torso_controller]: activate successful
+[gazebo-1] [INFO] [1794844450.211276754] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844450.431172313] [spawner_joint_state_broadcaster]: Configured and activated torso_controller
+[gazebo-1] [INFO] [1794844450.436842372] [controller_manager]: Loading controller : 'head_controller' of type 'position_controllers/JointGroupPositionController'
+[gazebo-1] [INFO] [1794844450.436876200] [controller_manager]: Loading controller 'head_controller'
+[gazebo-1] [INFO] [1794844450.437878862] [controller_manager]: Controller 'head_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844450.480854865] [spawner_joint_state_broadcaster]: Loaded head_controller
+[gazebo-1] [INFO] [1794844450.482048440] [controller_manager]: Configuring controller: 'head_controller'
+[gazebo-1] [INFO] [1794844450.485978157] [head_controller]: configure successful
+[gazebo-1] [INFO] [1794844450.513347016] [controller_manager]: Activating controllers: [ head_controller ]
+[gazebo-1] [INFO] [1794844450.531541086] [head_controller]: activate successful
+[gazebo-1] [INFO] [1794844450.531608072] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844450.557037550] [spawner_joint_state_broadcaster]: Configured and activated head_controller
+[gazebo-1] [INFO] [1794844450.565022410] [controller_manager]: Loading controller : 'steering_controller' of type 'position_controllers/JointGroupPositionController'
+[gazebo-1] [INFO] [1794844450.565047695] [controller_manager]: Loading controller 'steering_controller'
+[gazebo-1] [INFO] [1794844450.565577806] [controller_manager]: Controller 'steering_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844450.831472751] [spawner_joint_state_broadcaster]: Loaded steering_controller
+[gazebo-1] [INFO] [1794844450.832637947] [controller_manager]: Configuring controller: 'steering_controller'
+[gazebo-1] [INFO] [1794844450.835390199] [steering_controller]: configure successful
+[gazebo-1] [INFO] [1794844450.857085240] [controller_manager]: Activating controllers: [ steering_controller ]
+[gazebo-1] [INFO] [1794844450.868382785] [steering_controller]: activate successful
+[gazebo-1] [INFO] [1794844450.868505610] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844450.882916220] [spawner_joint_state_broadcaster]: Configured and activated steering_controller
+[gazebo-1] [INFO] [1794844450.887800004] [controller_manager]: Loading controller : 'wheel_controller' of type 'velocity_controllers/JointGroupVelocityController'
+[gazebo-1] [INFO] [1794844450.887852904] [controller_manager]: Loading controller 'wheel_controller'
+[gazebo-1] [INFO] [1794844450.895860205] [controller_manager]: Controller 'wheel_controller' node arguments: --ros-args --params-file /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/config/ros2_controllers.yaml -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-10] [INFO] [1794844450.936808827] [spawner_joint_state_broadcaster]: Loaded wheel_controller
+[gazebo-1] [INFO] [1794844450.937676214] [controller_manager]: Configuring controller: 'wheel_controller'
+[gazebo-1] [INFO] [1794844450.939100529] [wheel_controller]: configure successful
+[gazebo-1] [INFO] [1794844451.015074901] [controller_manager]: Activating controllers: [ wheel_controller ]
+[gazebo-1] [INFO] [1794844451.038637237] [wheel_controller]: activate successful
+[gazebo-1] [INFO] [1794844451.038690899] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1794844451.060863005] [spawner_joint_state_broadcaster]: Configured and activated wheel_controller
+[INFO] [spawner-10]: process has finished cleanly [pid 188]
+[rosbridge_websocket-8] [INFO] [1794844479.554736918] [rosbridge_websocket]: Calling services in new thread
+[rosbridge_websocket-8] [INFO] [1794844479.555323375] [rosbridge_websocket]: Sending action goals in new thread
+[rosbridge_websocket-8] [INFO] [1794844479.556381943] [rosbridge_websocket]: Client connected. 1 clients total.
+[rosbridge_websocket-8] [INFO] [1794844479.681600196] [rosbridge_websocket]: [Client 25e3122b-bf58-41bf-8f0f-7ea9efb49707] Subscribed to /galbot/status
+[rosbridge_websocket-8] [INFO] [1794844479.712810267] [rosbridge_websocket]: [Client 25e3122b-bf58-41bf-8f0f-7ea9efb49707] Subscribed to /galbot/web/overview/compressed
+[rosbridge_websocket-8] [INFO] [1794844479.783318702] [rosbridge_websocket]: Calling services in new thread
+[rosbridge_websocket-8] [INFO] [1794844479.785161270] [rosbridge_websocket]: Sending action goals in new thread
+[rosbridge_websocket-8] [INFO] [1794844479.789923013] [rosbridge_websocket]: Client connected. 2 clients total.
+[rosbridge_websocket-8] [INFO] [1794844479.860502829] [rosbridge_websocket]: [Client df429163-6bdd-42fb-a900-b97191c395f2] Subscribed to /galbot/status
+[rosbridge_websocket-8] [INFO] [1794844479.863254487] [rosbridge_websocket]: [Client df429163-6bdd-42fb-a900-b97191c395f2] Subscribed to /galbot/web/overview/compressed
+[commander.py-6] [INFO] [1794844490.480320308] [galbot_commander]: デモ開始: 赤い缶 を掴んでトレイに置き、スタート位置へ戻ります
+[commander.py-6] [INFO] [1794844490.480654011] [galbot_commander]: 準備姿勢へ (right アームで 赤い缶 を掴みます)
+[commander.py-6] [INFO] [1794844492.998794443] [galbot_commander]: テーブルへ移動 (x=0.83, y=-0.10)
+[commander.py-6] [INFO] [1794844511.539021367] [galbot_commander]: 把持姿勢を計算中
+[commander.py-6] [INFO] [1794844511.577664539] [galbot_commander]: 赤い缶 の上へアームを移動
+[commander.py-6] [INFO] [1794844515.652193795] [galbot_commander]: 下降
+[commander.py-6] [INFO] [1794844524.120339769] [galbot_commander]: グリッパを閉じる
+[parameter_bridge-2] [INFO] [1794844525.783404045] [galbot_gz_bridge]: Passing message from ROS std_msgs/msg/String to Gazebo gz.msgs.StringMsg (showing msg only once per type)
+[commander.py-6] [INFO] [1794844525.791033569] [galbot_commander]: 赤い缶 を把持しました (right アーム)
+[commander.py-6] [INFO] [1794844527.298992428] [galbot_commander]: 持ち上げ
+[gazebo-1] [1;32m[Msg] [0m[1;32m[galbot_sim_helper] attached [0m[1;32mred_can[0m[1;32m to [0m[1;32mgalbot_s1[0m[1;32m::[0m[1;32mright_arm_link7[0m[1;32m[0m
+[commander.py-6] [INFO] [1794844536.547899432] [galbot_commander]: 赤い缶 を持ち上げました (dz=0.150 m)
+[commander.py-6] [INFO] [1794844536.548273335] [galbot_commander]: 胴を 6 cm 上げて他の物の上を通します
+[commander.py-6] [INFO] [1794844540.875103824] [galbot_commander]: 赤い缶 をトレイへ運びます
+[commander.py-6] [INFO] [1794844555.994083505] [galbot_commander]: 胴を下げる
+[commander.py-6] [INFO] [1794844560.294363088] [galbot_commander]: 置く位置の上へ
+[commander.py-6] [INFO] [1794844561.534141975] [galbot_commander]: 下降
+[commander.py-6] [INFO] [1794844569.803056948] [galbot_commander]: リリース
+[commander.py-6] [INFO] [1794844569.803453458] [galbot_commander]: 赤い缶 を離しました
+[gazebo-1] [1;32m[Msg] [0m[1;32m[galbot_sim_helper] detached [0m[1;32mred_can[0m[1;32m[0m
+[commander.py-6] [INFO] [1794844573.026947088] [galbot_commander]: アームを上げる
+[commander.py-6] [INFO] [1794844582.254553898] [galbot_commander]: 準備姿勢へ
+[commander.py-6] [INFO] [1794844583.272694555] [galbot_commander]: スタート位置へ戻る
+[commander.py-6] [INFO] [1794844608.672408138] [galbot_commander]: タスク demo 完了
+[commander.py-6] [INFO] [1794844609.593037379] [galbot_commander]: 準備姿勢へ (left アームで 青い箱 を掴みます)
+[commander.py-6] [INFO] [1794844611.915567964] [galbot_commander]: テーブルへ移動 (x=0.83, y=0.10)
+[commander.py-6] [INFO] [1794844632.075250941] [galbot_commander]: 把持姿勢を計算中
+[commander.py-6] [INFO] [1794844632.133993205] [galbot_commander]: 青い箱 の上へアームを移動
+[commander.py-6] [INFO] [1794844635.905608456] [galbot_commander]: 下降
+[commander.py-6] [INFO] [1794844644.169265918] [galbot_commander]: グリッパを閉じる
+[commander.py-6] [INFO] [1794844648.288454504] [galbot_commander]: 青い箱 を把持しました (left アーム)
+[commander.py-6] [INFO] [1794844649.720924775] [galbot_commander]: 持ち上げ
+[gazebo-1] [1;32m[Msg] [0m[1;32m[galbot_sim_helper] attached [0m[1;32mblue_box[0m[1;32m to [0m[1;32mgalbot_s1[0m[1;32m::[0m[1;32mleft_arm_link7[0m[1;32m[0m
+[commander.py-6] [INFO] [1794844659.196481619] [galbot_commander]: 青い箱 を持ち上げました (dz=0.150 m)
+[commander.py-6] [INFO] [1794844659.202969459] [galbot_commander]: 胴を 6 cm 上げて他の物の上を通します
+[commander.py-6] [INFO] [1794844663.522750568] [galbot_commander]: タスク pick 完了
+[commander.py-6] [INFO] [1794844663.671804367] [galbot_commander]: 青い箱 を元の位置へ運びます
+[commander.py-6] [INFO] [1794844665.070288387] [galbot_commander]: 胴を下げる
+[commander.py-6] [INFO] [1794844669.661739539] [galbot_commander]: 置く位置の上へ
+[commander.py-6] [INFO] [1794844671.009533908] [galbot_commander]: 下降
+[commander.py-6] [INFO] [1794844679.145055943] [galbot_commander]: リリース
+[commander.py-6] [INFO] [1794844679.148692193] [galbot_commander]: 青い箱 を離しました
+[gazebo-1] [1;32m[Msg] [0m[1;32m[galbot_sim_helper] detached [0m[1;32mblue_box[0m[1;32m[0m
+[commander.py-6] [INFO] [1794844683.750244086] [galbot_commander]: アームを上げる
+[commander.py-6] [INFO] [1794844692.974525252] [galbot_commander]: タスク place 完了
+[commander.py-6] [INFO] [1794844693.257267908] [galbot_commander]: シーンをリセット
+[commander.py-6] [INFO] [1794844697.775162680] [galbot_commander]: タスク reset_scene 完了
+[rosbridge_websocket-8] [INFO] [1794844709.382931873] [rosbridge_websocket]: Client disconnected. 1 clients total.
+[rosbridge_websocket-8] [INFO] [1794844709.392647312] [rosbridge_websocket]: Client disconnected. 0 clients total.
+[ERROR] [gazebo-1]: process has died [pid 49, exit code -9, cmd 'ruby /opt/ros/jazzy/opt/gz_tools_vendor/bin/gz sim -r -s -v 3 --headless-rendering /ws/install/galbot_s1_gazebo/share/galbot_s1_gazebo/worlds/table_scene.sdf --force-version 8'].
+[INFO] [launch]: process[gazebo-1] was required: shutting down launched system
