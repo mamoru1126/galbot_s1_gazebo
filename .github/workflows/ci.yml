@@ -1,0 +1,107 @@
+name: sim-ci
+
+# Builds the Docker images and runs the real simulators headless:
+# xacro + unit tests, then an end-to-end run (drive, jog, gripper, full
+# pick-and-place demo with both arms) driven through the same command topic
+# the web UI uses. Screenshots of the web UI and camera frames are uploaded.
+on:
+  push:
+    branches: ['**']
+    paths-ignore: ['**.md', 'docs/**']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish_results:
+        description: 'Also push screenshots / logs to the ci-results/<distro> branches'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # only used by the optional "publish results" step
+
+jobs:
+  sim:
+    name: ${{ matrix.distro }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        distro: [noetic, jazzy]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
+
+      - name: Build image
+        run: docker build -f docker/${{ matrix.distro }}/Dockerfile -t galbot_s1_gazebo:${{ matrix.distro }} .
+
+      - name: xacro + unit tests
+        run: docker run --rm galbot_s1_gazebo:${{ matrix.distro }} bash /ws/src/galbot_s1_gazebo/ci/unit_tests.sh
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install playwright (uses the preinstalled Chrome)
+        run: pip install playwright==1.47.0
+
+      - name: Simulation end-to-end test
+        id: sim
+        run: |
+          mkdir -p ci_out
+          docker run -d --name sim --net=host --shm-size=1g -v "$PWD/ci_out:/ci_out" \
+            galbot_s1_gazebo:${{ matrix.distro }} bash /ws/src/galbot_s1_gazebo/ci/run_sim_test.sh /ci_out
+          python ci/ui_screenshots.py ci_out &
+          SHOT_PID=$!
+          RC=$(docker wait sim)
+          docker logs sim > ci_out/container.log 2>&1 || true
+          wait $SHOT_PID || true
+          echo "exit code: $RC"
+          exit "$RC"
+
+      - name: Report
+        if: always()
+        run: |
+          {
+            echo "## ${{ matrix.distro }}"
+            echo '```'
+            grep '^\[ci\]' ci_out/client.log || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ -f ci_out/client.log ]; then
+            while IFS= read -r line; do echo "::notice title=ci-${{ matrix.distro }}::$line"; done < <(grep '^\[ci\]' ci_out/client.log | head -n 20)
+          fi
+          if [ -f ci_out/launch.log ]; then
+            grep -iE 'error|exception|traceback|fail|warn|died' ci_out/launch.log | grep -v 'Sensor_' | head -n 40 > ci_out/launch_errors.txt || true
+            while IFS= read -r line; do echo "::warning title=launch-${{ matrix.distro }}::${line:0:900}"; done < <(head -n 10 ci_out/launch_errors.txt)
+          fi
+          for f in client.log diagnostics.log launch_errors.txt; do
+            echo "::group::$f"; cat "ci_out/$f" 2>/dev/null || true; echo "::endgroup::"
+          done
+          echo "::group::launch.log (tail)"; tail -n 400 ci_out/launch.log 2>/dev/null || true; echo "::endgroup::"
+
+      - name: Publish results to branch ci-results/${{ matrix.distro }}
+        if: always() && github.event_name == 'workflow_dispatch' && inputs.publish_results
+        run: |
+          rm -rf /tmp/pub
+          mkdir -p /tmp/pub
+          cp -r ci_out/. /tmp/pub/ 2>/dev/null || true
+          cd /tmp/pub
+          git init -q -b results
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -qm "CI results ${{ github.sha }} (${{ matrix.distro }})" || exit 0
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:refs/heads/ci-results/${{ matrix.distro }}
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-${{ matrix.distro }}
+          path: ci_out
+          retention-days: 14

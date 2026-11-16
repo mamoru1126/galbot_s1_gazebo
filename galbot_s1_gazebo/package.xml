@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>galbot_s1_gazebo</name>
+  <version>0.1.0</version>
+  <description>
+    Galbot S1 simulation: Gazebo Classic 11 (ROS 1 Noetic) and Gazebo Harmonic (ROS 2 Jazzy).
+    Table pick-and-place demo world, controllers, launch files and helper plugins
+    (planar base for Classic, grasp attach / object reset for both).
+  </description>
+  <maintainer email="mamoru1126@users.noreply.github.com">mamoru1126</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
+  <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
+
+  <!-- ROS 1 / Gazebo Classic -->
+  <depend condition="$ROS_VERSION == 1">roscpp</depend>
+  <depend condition="$ROS_VERSION == 1">std_msgs</depend>
+  <depend condition="$ROS_VERSION == 1">geometry_msgs</depend>
+  <depend condition="$ROS_VERSION == 1">nav_msgs</depend>
+  <depend condition="$ROS_VERSION == 1">gazebo_ros</depend>
+  <build_depend condition="$ROS_VERSION == 1">gazebo_dev</build_depend>
+  <exec_depend condition="$ROS_VERSION == 1">gazebo_ros_control</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 1">gazebo_plugins</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 1">joint_state_controller</exec_depend>
+
+  <!-- ROS 2 / Gazebo Harmonic -->
+  <build_depend condition="$ROS_VERSION == 2">gz_sim_vendor</build_depend>
+  <build_depend condition="$ROS_VERSION == 2">gz_plugin_vendor</build_depend>
+  <exec_depend condition="$ROS_VERSION == 2">gz_sim_vendor</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">ros_gz_sim</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">ros_gz_bridge</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">gz_ros2_control</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">joint_state_broadcaster</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">launch_ros</exec_depend>
+
+  <!-- common -->
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>position_controllers</exec_depend>
+  <exec_depend>velocity_controllers</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>galbot_s1_description</exec_depend>
+  <exec_depend>galbot_s1_control</exec_depend>
+  <exec_depend>galbot_s1_web</exec_depend>
+
+  <export>
+    <build_type condition="$ROS_VERSION == 1">catkin</build_type>
+    <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
+  </export>
+</package>

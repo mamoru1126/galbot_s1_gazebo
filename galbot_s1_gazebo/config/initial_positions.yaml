@@ -1,0 +1,20 @@
+# Initial joint positions in simulation (= "ready" pose of galbot_s1_control/robot_config.py).
+# Used by urdf/galbot_s1_gz.xacro (gz_ros2_control initial_value). In Gazebo Classic the
+# commander moves the robot to this pose right after start-up.
+torso_lift_joint1: 0.2
+head_joint1: 0.0
+head_joint2: -0.35
+right_arm_joint1: -1.275
+right_arm_joint2: -1.355
+right_arm_joint3: 0.86
+right_arm_joint4: 1.737
+right_arm_joint5: 1.659
+right_arm_joint6: 0.267
+right_arm_joint7: -1.164
+left_arm_joint1: 1.275
+left_arm_joint2: 1.355
+left_arm_joint3: -0.86
+left_arm_joint4: -1.737
+left_arm_joint5: -1.659
+left_arm_joint6: -0.267
+left_arm_joint7: 1.164
