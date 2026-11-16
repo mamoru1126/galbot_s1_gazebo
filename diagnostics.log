@@ -1,0 +1,206 @@
+==== diagnostics ====
+/controller_spawner
+/galbot_base_controller
+/galbot_camera_relay
+/galbot_commander
+/gazebo
+/robot_state_publisher
+/rosapi
+/rosbridge_websocket
+/rosout
+/client_count
+/clock
+/cmd_vel
+/connected_clients
+/galbot/base/cmd_vel
+/galbot/command
+/galbot/ground_truth/odom
+/galbot/head_camera/camera_info
+/galbot/head_camera/image_raw
+/galbot/head_camera/image_raw/compressed
+/galbot/head_camera/image_raw/compressed/parameter_descriptions
+/galbot/head_camera/image_raw/compressed/parameter_updates
+/galbot/head_camera/image_raw/compressedDepth
+/galbot/head_camera/image_raw/compressedDepth/parameter_descriptions
+/galbot/head_camera/image_raw/compressedDepth/parameter_updates
+/galbot/head_camera/image_raw/theora
+/galbot/head_camera/image_raw/theora/parameter_descriptions
+/galbot/head_camera/image_raw/theora/parameter_updates
+/galbot/head_camera/parameter_descriptions
+/galbot/head_camera/parameter_updates
+/galbot/left_wrist_camera/camera_info
+/galbot/left_wrist_camera/image_raw
+/galbot/left_wrist_camera/image_raw/compressed
+/galbot/left_wrist_camera/image_raw/compressed/parameter_descriptions
+/galbot/left_wrist_camera/image_raw/compressed/parameter_updates
+/galbot/left_wrist_camera/image_raw/compressedDepth
+/galbot/left_wrist_camera/image_raw/compressedDepth/parameter_descriptions
+/galbot/left_wrist_camera/image_raw/compressedDepth/parameter_updates
+/galbot/left_wrist_camera/image_raw/theora
+/galbot/left_wrist_camera/image_raw/theora/parameter_descriptions
+/galbot/left_wrist_camera/image_raw/theora/parameter_updates
+/galbot/left_wrist_camera/parameter_descriptions
+/galbot/left_wrist_camera/parameter_updates
+/galbot/objects/blue_box/odom
+/galbot/objects/green_bottle/odom
+/galbot/objects/red_can/odom
+/galbot/overview_camera/camera_info
+/galbot/overview_camera/image_raw
+/galbot/overview_camera/image_raw/compressed
+/galbot/overview_camera/image_raw/compressed/parameter_descriptions
+/galbot/overview_camera/image_raw/compressed/parameter_updates
+/galbot/overview_camera/image_raw/compressedDepth
+/galbot/overview_camera/image_raw/compressedDepth/parameter_descriptions
+/galbot/overview_camera/image_raw/compressedDepth/parameter_updates
+/galbot/overview_camera/image_raw/theora
+/galbot/overview_camera/image_raw/theora/parameter_descriptions
+/galbot/overview_camera/image_raw/theora/parameter_updates
+/galbot/overview_camera/parameter_descriptions
+/galbot/overview_camera/parameter_updates
+/galbot/right_wrist_camera/camera_info
+/galbot/right_wrist_camera/image_raw
+/galbot/right_wrist_camera/image_raw/compressed
+/galbot/right_wrist_camera/image_raw/compressed/parameter_descriptions
+/galbot/right_wrist_camera/image_raw/compressed/parameter_updates
+/galbot/right_wrist_camera/image_raw/compressedDepth
+/galbot/right_wrist_camera/image_raw/compressedDepth/parameter_descriptions
+/galbot/right_wrist_camera/image_raw/compressedDepth/parameter_updates
+/galbot/right_wrist_camera/image_raw/theora
+/galbot/right_wrist_camera/image_raw/theora/parameter_descriptions
+/galbot/right_wrist_camera/image_raw/theora/parameter_updates
+/galbot/right_wrist_camera/parameter_descriptions
+/galbot/right_wrist_camera/parameter_updates
+/galbot/sim/attach
+/galbot/sim/attached
+/galbot/sim/detach
+/galbot/sim/set_model_pose
+/galbot/status
+/galbot/web/head/compressed
+/galbot/web/left_wrist/compressed
+/galbot/web/overview/compressed
+/galbot/web/right_wrist/compressed
+/gazebo/link_states
+/gazebo/model_states
+/gazebo/parameter_descriptions
+/gazebo/parameter_updates
+/gazebo/performance_metrics
+/gazebo/set_link_state
+/gazebo/set_model_state
+/head_controller/command
+/joint_states
+/left_arm_controller/command
+/left_gripper_controller/command
+/odom
+/right_arm_controller/command
+/right_gripper_controller/command
+/rosout
+/rosout_agg
+/steering_controller/command
+/tf
+/tf_static
+/torso_controller/command
+/wheel_controller/command
+controller: 
+  - 
+    name: "joint_state_controller"
+    state: "running"
+    type: "joint_state_controller/JointStateController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::JointStateInterface"
+        resources: []
+  - 
+    name: "left_arm_controller"
+    state: "running"
+    type: "position_controllers/JointGroupPositionController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::PositionJointInterface"
+        resources: 
+          - left_arm_joint1
+          - left_arm_joint2
+          - left_arm_joint3
+          - left_arm_joint4
+          - left_arm_joint5
+          - left_arm_joint6
+          - left_arm_joint7
+  - 
+    name: "right_arm_controller"
+    state: "running"
+    type: "position_controllers/JointGroupPositionController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::PositionJointInterface"
+        resources: 
+          - right_arm_joint1
+          - right_arm_joint2
+          - right_arm_joint3
+          - right_arm_joint4
+          - right_arm_joint5
+          - right_arm_joint6
+          - right_arm_joint7
+  - 
+    name: "left_gripper_controller"
+    state: "running"
+    type: "position_controllers/JointGroupPositionController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::PositionJointInterface"
+        resources: 
+          - left_active_joint1
+          - left_active_joint2
+          - left_passive_joint
+  - 
+    name: "right_gripper_controller"
+    state: "running"
+    type: "position_controllers/JointGroupPositionController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::PositionJointInterface"
+        resources: 
+          - right_active_joint1
+          - right_active_joint2
+          - right_passive_joint
+  - 
+    name: "torso_controller"
+    state: "running"
+    type: "position_controllers/JointGroupPositionController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::PositionJointInterface"
+        resources: 
+          - torso_lift_joint1
+  - 
+    name: "head_controller"
+    state: "running"
+    type: "position_controllers/JointGroupPositionController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::PositionJointInterface"
+        resources: 
+          - head_joint1
+          - head_joint2
+  - 
+    name: "steering_controller"
+    state: "running"
+    type: "position_controllers/JointGroupPositionController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::PositionJointInterface"
+        resources: 
+          - wheel_steering_joint1
+          - wheel_steering_joint2
+          - wheel_steering_joint3
+          - wheel_steering_joint4
+  - 
+    name: "wheel_controller"
+    state: "running"
+    type: "velocity_controllers/JointGroupVelocityController"
+    claimed_resources: 
+      - 
+        hardware_interface: "hardware_interface::VelocityJointInterface"
+        resources: 
+          - wheel_driving_joint1
+          - wheel_driving_joint2
+          - wheel_driving_joint3
+          - wheel_driving_joint4

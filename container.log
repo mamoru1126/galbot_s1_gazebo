@@ -1,0 +1,14 @@
+Unable to register with master node [http://localhost:11311]: master may not be running yet. Will keep trying.
+[ci] bringup                      OK  {"ready": true, "base": {"x": 2.289643076955339e-05, "y": -2.882712535298075e-06, "yaw": 7.831562051166119e-06}, "objects": ["blue_box", "green_bottle", "red_can"], "task": {"name": "_startup", "state": "done", "step": "", "error": "", "id": 1}, "elapsed_s": 10.0}
+[ci] camera_frames                OK  {"cameras": ["head", "overview", "right_wrist"], "elapsed_s": 22.0}
+[ci] drive_forward                OK  {"dx": 0.604, "elapsed_s": 27.0}
+[ci] jog_right_arm                OK  {"max_joint_change": 0.14, "elapsed_s": 30.3}
+[ci] gripper_close_open           OK  {"elapsed_s": 33.8}
+[ci] demo_pick_place_red_can      OK  {"task": {"name": "demo", "state": "done", "step": "", "error": "", "id": 2}, "red_can": {"x": 1.4498027139771885, "y": 0.09992950425073108, "z": 0.8170629750468333, "yaw": 0.006624739930889117}, "base": {"x": 0.015179539781658091, "y": 0.009103709121056678, "yaw": -9.026091230646732e-05}, "log": ["15:54:00 \u7f6e\u304f\u4f4d\u7f6e\u306e\u4e0a\u3078", "15:54:01 \u4e0b\u964d", "15:54:03 \u30ea\u30ea\u30fc\u30b9", "15:54:03 \u8d64\u3044\u7f36 \u3092\u96e2\u3057\u307e\u3057\u305f", "15:54:04 \u30a2\u30fc\u30e0\u3092\u4e0a\u3052\u308b", "15:54:06 \u6e96\u5099\u59ff\u52e2\u3078", "15:54:06 \u30b9\u30bf\u30fc\u30c8\u4f4d\u7f6e\u3078\u623b\u308b", "15:54:12 \u30bf\u30b9\u30af demo \u5b8c\u4e86"], "elapsed_s": 65.4}
+[ci] other_objects_undisturbed    OK  {"moved": [], "elapsed_s": 65.4}
+[ci] pick_blue_box_left_arm       OK  {"task": {"name": "pick", "state": "done", "step": "", "error": "", "id": 3}, "blue_box": {"x": 1.453762488059813, "y": 0.34984462963411006, "z": 1.0099998274289743, "yaw": -0.06326218765577349}, "holding": {"left": "blue_box", "right": null}, "elapsed_s": 78.4}
+[ci] place_blue_box_origin        OK  {"task": {"name": "place", "state": "done", "step": "", "error": "", "id": 4}, "blue_box": {"x": 1.4495295457630448, "y": 0.34991898156790513, "z": 0.7989963342799371, "yaw": -0.06301819483384932}, "elapsed_s": 85.9}
+[ci] scene_intact_after_left_arm  OK  {"moved": [], "red_can": {"x": 1.4498027139771885, "y": 0.09992950425073108, "z": 0.8170629750468333, "yaw": 0.006624739930889117}, "elapsed_s": 85.9}
+[ci] reset_scene                  OK  {"task": {"name": "reset_scene", "state": "done", "step": "", "error": "", "id": 5}, "elapsed_s": 87.4}
+[ci] RESULT PASS
+exit code 0

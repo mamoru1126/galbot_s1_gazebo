@@ -1,0 +1,33 @@
+[31m[ERROR] [1794844391.769718032, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/torso_lift_joint1[0m
+[31m[ERROR] [1794844391.770655600, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/head_joint1[0m
+[31m[ERROR] [1794844391.771383132, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/head_joint2[0m
+[31m[ERROR] [1794844391.772311648, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint1[0m
+[31m[ERROR] [1794844391.772941213, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint2[0m
+[31m[ERROR] [1794844391.773482937, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint3[0m
+[31m[ERROR] [1794844391.773982561, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint4[0m
+[31m[ERROR] [1794844391.774498328, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint5[0m
+[31m[ERROR] [1794844391.774955753, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint6[0m
+[31m[ERROR] [1794844391.775506362, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint7[0m
+[31m[ERROR] [1794844391.775987141, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_active_joint1[0m
+[31m[ERROR] [1794844391.776646474, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_active_joint2[0m
+[31m[ERROR] [1794844391.777164882, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_passive_joint[0m
+[31m[ERROR] [1794844391.777744192, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint1[0m
+[31m[ERROR] [1794844391.778277963, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint2[0m
+[31m[ERROR] [1794844391.778832849, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint3[0m
+[31m[ERROR] [1794844391.779371806, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint4[0m
+[31m[ERROR] [1794844391.779933918, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint5[0m
+[31m[ERROR] [1794844391.780426242, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint6[0m
+[31m[ERROR] [1794844391.780950940, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint7[0m
+[31m[ERROR] [1794844391.781454632, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_active_joint1[0m
+[31m[ERROR] [1794844391.782043272, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_active_joint2[0m
+[31m[ERROR] [1794844391.782645131, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_passive_joint[0m
+[31m[ERROR] [1794844391.783626741, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint1[0m
+[31m[ERROR] [1794844391.784475148, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint1[0m
+[31m[ERROR] [1794844391.785140440, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint2[0m
+[31m[ERROR] [1794844391.785809580, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint2[0m
+[31m[ERROR] [1794844391.786390267, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint3[0m
+[31m[ERROR] [1794844391.787080250, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint3[0m
+[31m[ERROR] [1794844391.787706324, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint4[0m
+[31m[ERROR] [1794844391.788626551, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint4[0m
+[ERROR] [1794844486.440710, 81.902000]: control: publish() to a closed topic
+[ERROR] [1794844486.442022, 81.906000]: status: publish() to a closed topic

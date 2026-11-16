@@ -1,0 +1,267 @@
+[galbot web] http://runnervm8axu0:8000  (or http://localhost:8000)  serving /ws/src/galbot_s1_gazebo/galbot_s1_web/web
+2026-11-16 15:53:08+0000 [-] Log opened.
+2026-11-16 15:53:08+0000 [-] registered capabilities (classes):
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.call_service.CallService'>
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.advertise.Advertise'>
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.publish.Publish'>
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.subscribe.Subscribe'>
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.defragmentation.Defragment'>
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.advertise_service.AdvertiseService'>
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.service_response.ServiceResponse'>
+2026-11-16 15:53:08+0000 [-]  - <class 'rosbridge_library.capabilities.unadvertise_service.UnadvertiseService'>
+2026-11-16 15:53:08+0000 [-] WebSocketServerFactory starting on 9090
+2026-11-16 15:53:08+0000 [-] Starting factory <autobahn.twisted.websocket.WebSocketServerFactory object at 0x7fe0c2d91a00>
+2026-11-16 15:53:08+0000 [-] [INFO] [1794844388.986661, 0.000000]: Rosbridge WebSocket server started at ws://0.0.0.0:9090
+[INFO] [1794844388.609147, 0.000000]: Loading model XML from ros parameter robot_description
+[INFO] [1794844388.643008, 0.000000]: Waiting for service /gazebo/spawn_urdf_model
+[INFO] [1794844389.250773, 0.000000]: Calling service /gazebo/spawn_urdf_model
+[INFO] [1794844391.396555, 0.001000]: Spawn status: SpawnModel: Successfully spawned entity
+[31m[ERROR] [1794844391.769718032, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/torso_lift_joint1[0m
+[31m[ERROR] [1794844391.770655600, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/head_joint1[0m
+[31m[ERROR] [1794844391.771383132, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/head_joint2[0m
+[31m[ERROR] [1794844391.772311648, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint1[0m
+[31m[ERROR] [1794844391.772941213, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint2[0m
+[31m[ERROR] [1794844391.773482937, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint3[0m
+[31m[ERROR] [1794844391.773982561, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint4[0m
+[31m[ERROR] [1794844391.774498328, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint5[0m
+[31m[ERROR] [1794844391.774955753, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint6[0m
+[31m[ERROR] [1794844391.775506362, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_arm_joint7[0m
+[31m[ERROR] [1794844391.775987141, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_active_joint1[0m
+[31m[ERROR] [1794844391.776646474, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_active_joint2[0m
+[31m[ERROR] [1794844391.777164882, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/left_passive_joint[0m
+[31m[ERROR] [1794844391.777744192, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint1[0m
+[31m[ERROR] [1794844391.778277963, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint2[0m
+[31m[ERROR] [1794844391.778832849, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint3[0m
+[31m[ERROR] [1794844391.779371806, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint4[0m
+[31m[ERROR] [1794844391.779933918, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint5[0m
+[31m[ERROR] [1794844391.780426242, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint6[0m
+[31m[ERROR] [1794844391.780950940, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_arm_joint7[0m
+[31m[ERROR] [1794844391.781454632, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_active_joint1[0m
+[31m[ERROR] [1794844391.782043272, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_active_joint2[0m
+[31m[ERROR] [1794844391.782645131, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/right_passive_joint[0m
+[31m[ERROR] [1794844391.783626741, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint1[0m
+[31m[ERROR] [1794844391.784475148, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint1[0m
+[31m[ERROR] [1794844391.785140440, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint2[0m
+[31m[ERROR] [1794844391.785809580, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint2[0m
+[31m[ERROR] [1794844391.786390267, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint3[0m
+[31m[ERROR] [1794844391.787080250, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint3[0m
+[31m[ERROR] [1794844391.787706324, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_steering_joint4[0m
+[31m[ERROR] [1794844391.788626551, 0.001000000]: No p gain specified for pid.  Namespace: /gazebo_ros_control/pid_gains/wheel_driving_joint4[0m
+2026-11-16 15:53:32+0000 [-] [INFO] [1794844412.370658, 18.062000]: Client connected.  1 clients total.
+2026-11-16 15:53:32+0000 [-] [INFO] [1794844412.701836, 18.286000]: Client connected.  2 clients total.
+2026-11-16 15:53:32+0000 [-] [INFO] [1794844412.766503, 18.329000]: [Client 0] Subscribed to /galbot/status
+2026-11-16 15:53:32+0000 [-] [INFO] [1794844412.768157, 18.331000]: [Client 1] Subscribed to /galbot/status
+2026-11-16 15:53:32+0000 [-] [INFO] [1794844412.799562, 18.357000]: [Client 0] Subscribed to /galbot/web/overview/compressed
+2026-11-16 15:53:32+0000 [-] [INFO] [1794844412.800451, 18.357000]: [Client 1] Subscribed to /galbot/web/overview/compressed
+2026-11-16 15:54:41+0000 [-] [INFO] [1794844481.607197, 77.778000]: Client disconnected. 1 clients total.
+2026-11-16 15:54:41+0000 [-] [INFO] [1794844481.629115, 77.791000]: Client disconnected. 0 clients total.
+[0m[INFO] [1794844388.862776055]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[INFO] [1794844388.864003629]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[INFO] [1794844389.152286635]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[INFO] [1794844389.171535250]: Physics dynamic reconfigure ready.[0m
+[0m[INFO] [1794844391.097504288]: Camera Plugin: The 'robotNamespace' param did not exit[0m
+[0m[INFO] [1794844391.100437545]: Camera Plugin (ns = )  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1794844391.115315314]: [galbot_sim_helper] ready, publishing 3 object poses[0m
+[0m[INFO] [1794844391.600810278, 0.001000000]: Camera Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[INFO] [1794844391.602004266, 0.001000000]: Camera Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[INFO] [1794844391.603298517, 0.001000000]: Camera Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1794844391.603349242, 0.001000000]: Camera Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[INFO] [1794844391.604273190, 0.001000000]: Camera Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1794844391.607323399, 0.001000000]: Camera Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1794844391.624050434, 0.001000000]: Loading gazebo_ros_control plugin[0m
+[0m[INFO] [1794844391.625129784, 0.001000000]: Starting gazebo_ros_control plugin in namespace: /[0m
+[0m[INFO] [1794844391.630217262, 0.001000000]: gazebo_ros_control plugin is waiting for model URDF in parameter [robot_description] on the ROS param server.[0m
+[0m[INFO] [1794844391.793975564, 0.001000000]: Loaded gazebo_ros_control.[0m
+[0m[INFO] [1794844391.803986744, 0.001000000]: [galbot_planar_base] link base_footprint, cmd /galbot/base/cmd_vel, odom /galbot/ground_truth/odom[0m
+[0m[INFO] [1794844432.016148670, 34.980000000]: [galbot_sim_helper] attached red_can to galbot_s1::right_arm_link7[0m
+[0m[INFO] [1794844443.410645585, 44.648000000]: [galbot_sim_helper] detached red_can[0m
+[0m[INFO] [1794844462.524973893, 61.255000000]: [galbot_sim_helper] attached blue_box to galbot_s1::left_arm_link7[0m
+[0m[INFO] [1794844470.296529722, 68.007000000]: [galbot_sim_helper] detached blue_box[0m
+[INFO] [1794844388.846891, 0.000000]: Rosapi started
+[INFO] [1794844388.772081, 0.000000]: camera relay: overview, head, right_wrist, left_wrist
+2026-11-16 15:54:47+0000 [autobahn.twisted.websocket.WebSocketServerFactory] (TCP Port 9090 Closed)
+2026-11-16 15:54:47+0000 [-] Stopping factory <autobahn.twisted.websocket.WebSocketServerFactory object at 0x7fe0c2d91a00>
+2026-11-16 15:54:47+0000 [-] Main loop terminated.
+[INFO] [1794844388.849651, 0.000000]: base controller ready
+[ERROR] [1794844486.440710, 81.902000]: control: publish() to a closed topic
+[ERROR] [1794844486.442022, 81.906000]: status: publish() to a closed topic
+[INFO] [1794844388.841780, 0.000000]: commander started (ROS1)
+[INFO] [1794844392.194432, 0.363000]: joint states received - ready
+[INFO] [1794844424.868933, 28.809000]: デモ開始: 赤い缶 を掴んでトレイに置き、スタート位置へ戻ります
+[INFO] [1794844424.870635, 28.810000]: 準備姿勢へ (right アームで 赤い缶 を掴みます)
+[INFO] [1794844425.485965, 29.327000]: テーブルへ移動 (x=0.83, y=-0.10)
+[INFO] [1794844428.551503, 32.043000]: 把持姿勢を計算中
+[INFO] [1794844428.650295, 32.118000]: 赤い缶 の上へアームを移動
+[INFO] [1794844429.669904, 32.980000]: 下降
+[INFO] [1794844431.702449, 34.715000]: グリッパを閉じる
+[INFO] [1794844432.013347, 34.977000]: 赤い缶 を把持しました (right アーム)
+[INFO] [1794844432.393611, 35.281000]: 持ち上げ
+[INFO] [1794844434.675493, 37.239000]: 赤い缶 を持ち上げました (dz=0.151 m)
+[INFO] [1794844434.677294, 37.239000]: 胴を 6 cm 上げて他の物の上を通します
+[INFO] [1794844435.756918, 38.192000]: 赤い缶 をトレイへ運びます
+[INFO] [1794844439.712975, 41.545000]: 胴を下げる
+[INFO] [1794844440.907708, 42.544000]: 置く位置の上へ
+[INFO] [1794844441.285449, 42.862000]: 下降
+[INFO] [1794844443.405023, 44.645000]: リリース
+[INFO] [1794844443.409796, 44.646000]: 赤い缶 を離しました
+[INFO] [1794844444.079600, 45.220000]: アームを上げる
+[INFO] [1794844446.302912, 47.114000]: 準備姿勢へ
+[INFO] [1794844446.607670, 47.371000]: スタート位置へ戻る
+[INFO] [1794844452.928776, 52.868000]: タスク demo 完了
+[INFO] [1794844453.407759, 53.291000]: 準備姿勢へ (left アームで 青い箱 を掴みます)
+[INFO] [1794844454.012099, 53.820000]: テーブルへ移動 (x=0.83, y=0.10)
+[INFO] [1794844458.963835, 58.228000]: 把持姿勢を計算中
+[INFO] [1794844459.056707, 58.302000]: 青い箱 の上へアームを移動
+[INFO] [1794844460.017997, 59.113000]: 下降
+[INFO] [1794844461.998103, 60.822000]: グリッパを閉じる
+[INFO] [1794844462.519175, 61.253000]: 青い箱 を把持しました (left アーム)
+[INFO] [1794844462.854781, 61.559000]: 持ち上げ
+[INFO] [1794844465.078597, 63.488000]: 青い箱 を持ち上げました (dz=0.150 m)
+[INFO] [1794844465.080754, 63.489000]: 胴を 6 cm 上げて他の物の上を通します
+[INFO] [1794844466.196029, 64.457000]: タスク pick 完了
+[INFO] [1794844466.426149, 64.659000]: 青い箱 を元の位置へ運びます
+[INFO] [1794844466.774262, 64.963000]: 胴を下げる
+[INFO] [1794844467.928889, 65.984000]: 置く位置の上へ
+[INFO] [1794844468.255083, 66.258000]: 下降
+[INFO] [1794844470.294114, 68.004000]: リリース
+[INFO] [1794844470.296425, 68.006000]: 青い箱 を離しました
+[INFO] [1794844471.157975, 68.731000]: アームを上げる
+[INFO] [1794844473.318559, 70.603000]: タスク place 完了
+[INFO] [1794844473.936879, 71.142000]: シーンをリセット
+[INFO] [1794844475.215335, 72.213000]: タスク reset_scene 完了
+[INFO] [1794844388.462815, 0.000000]: Controller Spawner: Waiting for service controller_manager/load_controller
+[INFO] [1794844392.085654, 0.259000]: Controller Spawner: Waiting for service controller_manager/switch_controller
+[INFO] [1794844392.088843, 0.262000]: Controller Spawner: Waiting for service controller_manager/unload_controller
+[INFO] [1794844392.092122, 0.265000]: Loading controller: joint_state_controller
+[INFO] [1794844392.103272, 0.276000]: Loading controller: left_arm_controller
+[INFO] [1794844392.116811, 0.289000]: Loading controller: right_arm_controller
+[INFO] [1794844392.125912, 0.298000]: Loading controller: left_gripper_controller
+[INFO] [1794844392.135100, 0.306000]: Loading controller: right_gripper_controller
+[INFO] [1794844392.148018, 0.319000]: Loading controller: torso_controller
+[INFO] [1794844392.156959, 0.327000]: Loading controller: head_controller
+[INFO] [1794844392.165052, 0.334000]: Loading controller: steering_controller
+[INFO] [1794844392.173388, 0.343000]: Loading controller: wheel_controller
+[INFO] [1794844392.186711, 0.356000]: Controller Spawner: Loaded controllers: joint_state_controller, left_arm_controller, right_arm_controller, left_gripper_controller, right_gripper_controller, torso_controller, head_controller, steering_controller, wheel_controller
+[INFO] [1794844392.192769, 0.362000]: Started controllers: joint_state_controller, left_arm_controller, right_arm_controller, left_gripper_controller, right_gripper_controller, torso_controller, head_controller, steering_controller, wheel_controller
+[INFO] [1794844486.418010, 81.883000]: Shutting down spawner. Stopping and unloading controllers...
+[INFO] [1794844486.430043, 81.896000]: Stopping all controllers...
+[INFO] [1794844486.439428, 81.905000]: Unloading all loaded controllers...
+[INFO] [1794844486.440807, 81.906000]: Trying to unload wheel_controller
+[INFO] [1794844486.451099, 81.914000]: Succeeded in unloading wheel_controller
+[INFO] [1794844486.453329, 81.916000]: Trying to unload steering_controller
+[INFO] [1794844486.465577, 81.925000]: Succeeded in unloading steering_controller
+[INFO] [1794844486.468295, 81.925000]: Trying to unload head_controller
+[INFO] [1794844486.479286, 81.933000]: Succeeded in unloading head_controller
+[INFO] [1794844486.481636, 81.935000]: Trying to unload torso_controller
+[INFO] [1794844486.488733, 81.939000]: Succeeded in unloading torso_controller
+[INFO] [1794844486.489866, 81.939000]: Trying to unload right_gripper_controller
+[INFO] [1794844486.507403, 81.949000]: Succeeded in unloading right_gripper_controller
+[INFO] [1794844486.511349, 81.951000]: Trying to unload left_gripper_controller
+[INFO] [1794844486.524665, 81.958000]: Succeeded in unloading left_gripper_controller
+[INFO] [1794844486.528763, 81.958000]: Trying to unload right_arm_controller
+[INFO] [1794844486.540219, 81.964000]: Succeeded in unloading right_arm_controller
+[INFO] [1794844486.543644, 81.965000]: Trying to unload left_arm_controller
+[INFO] [1794844486.556803, 81.972000]: Succeeded in unloading left_arm_controller
+[INFO] [1794844486.562239, 81.973000]: Trying to unload joint_state_controller
+[INFO] [1794844486.573674, 81.981000]: Succeeded in unloading joint_state_controller
+... logging to /root/.ros/log/d0b3975c-e1d5-11f1-997b-6045bd7a29d9/roslaunch-runnervm8axu0-45.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/ws/src/galbot_s1_gazebo/galbot_s1_gazebo/launch/sim.launch
+[1mstarted roslaunch server http://runnervm8axu0:42303/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /galbot_commander/scene_file: /ws/src/galbot_s1...
+ * /gazebo/enable_ros_network: True
+ * /head_controller/joints: ['head_joint1', '...
+ * /head_controller/type: position_controll...
+ * /joint_state_controller/publish_rate: 50
+ * /joint_state_controller/type: joint_state_contr...
+ * /left_arm_controller/joints: ['left_arm_joint1...
+ * /left_arm_controller/type: position_controll...
+ * /left_gripper_controller/joints: ['left_active_joi...
+ * /left_gripper_controller/type: position_controll...
+ * /right_arm_controller/joints: ['right_arm_joint...
+ * /right_arm_controller/type: position_controll...
+ * /right_gripper_controller/joints: ['right_active_jo...
+ * /right_gripper_controller/type: position_controll...
+ * /robot_description: <?xml version="1....
+ * /rosapi/params_glob: [*]
+ * /rosapi/services_glob: [*]
+ * /rosapi/topics_glob: [*]
+ * /rosbridge_websocket/address: 0.0.0.0
+ * /rosbridge_websocket/authenticate: False
+ * /rosbridge_websocket/bson_only_mode: False
+ * /rosbridge_websocket/delay_between_messages: 0
+ * /rosbridge_websocket/fragment_timeout: 600
+ * /rosbridge_websocket/max_message_size: None
+ * /rosbridge_websocket/params_glob: [*]
+ * /rosbridge_websocket/port: 9090
+ * /rosbridge_websocket/retry_startup_delay: 5
+ * /rosbridge_websocket/services_glob: [*]
+ * /rosbridge_websocket/topics_glob: [*]
+ * /rosbridge_websocket/unregister_timeout: 10
+ * /rosbridge_websocket/use_compression: False
+ * /rosbridge_websocket/websocket_external_port: None
+ * /rosbridge_websocket/websocket_ping_interval: 0
+ * /rosbridge_websocket/websocket_ping_timeout: 30
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /steering_controller/joints: ['wheel_steering_...
+ * /steering_controller/type: position_controll...
+ * /torso_controller/joints: ['torso_lift_join...
+ * /torso_controller/type: position_controll...
+ * /use_sim_time: True
+ * /wheel_controller/joints: ['wheel_driving_j...
+ * /wheel_controller/type: velocity_controll...
+
+NODES
+  /
+    controller_spawner (controller_manager/spawner)
+    galbot_base_controller (galbot_s1_control/base_controller.py)
+    galbot_camera_relay (galbot_s1_control/camera_relay.py)
+    galbot_commander (galbot_s1_control/commander.py)
+    galbot_web_server (galbot_s1_web/web_server.py)
+    gazebo (gazebo_ros/gzserver)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    rosapi (rosapi/rosapi_node)
+    rosbridge_websocket (rosbridge_server/rosbridge_websocket)
+    spawn_galbot_s1 (gazebo_ros/spawn_model)
+
+auto-starting new master
+[1mprocess[master]: started with pid [63][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/ws/src/galbot_s1_gazebo/galbot_s1_gazebo/launch/sim.launch http://localhost:11311
+[1msetting /run_id to d0b3975c-e1d5-11f1-997b-6045bd7a29d9[0m
+[1mprocess[rosout-1]: started with pid [73][0m
+started core service [/rosout]
+[1mprocess[gazebo-2]: started with pid [80][0m
+[1mprocess[spawn_galbot_s1-3]: started with pid [84][0m
+[1mprocess[controller_spawner-4]: started with pid [86][0m
+[1mprocess[robot_state_publisher-5]: started with pid [87][0m
+[1mprocess[galbot_base_controller-6]: started with pid [88][0m
+[1mprocess[galbot_commander-7]: started with pid [89][0m
+[1mprocess[galbot_camera_relay-8]: started with pid [90][0m
+[1mprocess[rosbridge_websocket-9]: started with pid [91][0m
+[1mprocess[rosapi-10]: started with pid [96][0m
+[1mprocess[galbot_web_server-11]: started with pid [98][0m
+[1m[spawn_galbot_s1-3] process has finished cleanly
+log file: /root/.ros/log/d0b3975c-e1d5-11f1-997b-6045bd7a29d9/spawn_galbot_s1-3*.log[0m
+[galbot_web_server-11] killing on exit
+[rosapi-10] killing on exit
+[rosbridge_websocket-9] killing on exit
+[galbot_camera_relay-8] killing on exit
+[galbot_commander-7] killing on exit
+[galbot_base_controller-6] killing on exit
+[robot_state_publisher-5] killing on exit
+[controller_spawner-4] killing on exit
+[gazebo-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
