@@ -10,9 +10,14 @@ on:
     paths-ignore: ['**.md', 'docs/**']
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish_results:
+        description: 'Also push screenshots / logs to the ci-results/<distro> branches'
+        type: boolean
+        default: false
 
 permissions:
-  contents: write   # results (screenshots, logs) are pushed to ci-results/<distro>
+  contents: write   # only used by the optional "publish results" step
 
 jobs:
   sim:
@@ -80,7 +85,7 @@ jobs:
           echo "::group::launch.log (tail)"; tail -n 400 ci_out/launch.log 2>/dev/null || true; echo "::endgroup::"
 
       - name: Publish results to branch ci-results/${{ matrix.distro }}
-        if: always() && github.event_name != 'pull_request'
+        if: always() && github.event_name == 'workflow_dispatch' && inputs.publish_results
         run: |
           rm -rf /tmp/pub
           mkdir -p /tmp/pub

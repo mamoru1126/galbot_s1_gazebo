@@ -4,6 +4,14 @@
 **ROS 1 (Noetic + Gazebo Classic 11)** と **ROS 2 (Jazzy + Gazebo Harmonic)** の両方に対応し、
 走行・腕・グリッパ・胴・頭の操作と「机の上の物を掴んでトレイに置く」デモを **Web ブラウザから** 実行できます。
 
+| Web UI (PC) | Web UI (スマホ) |
+|---|---|
+| ![web ui](docs/images/web_ui_desktop.jpg) | <img src="docs/images/web_ui_mobile.jpg" width="220"> |
+
+| ROS 1 / Gazebo Classic: 缶を持ち上げて運ぶ | ROS 2 / Gazebo Harmonic: トレイに置く |
+|---|---|
+| ![noetic](docs/images/sim_noetic_carry.jpg) | ![jazzy](docs/images/sim_jazzy_place.jpg) |
+
 ```
 ブラウザ (PC / スマホ)
    │  http://<host>:8000         ws://<host>:9090
@@ -141,7 +149,7 @@ RViz でモデルだけ確認したいときは `roslaunch galbot_s1_description
 1. 物体が腕の届きやすい位置 (ロボットから前方 0.62 m・横 0.25 m) に来るように、ベースを全方向移動で位置合わせ
 2. IK (減衰最小二乗法・関節制限つき) で真上からの把持姿勢を計算し、物体の上 12 cm へ移動
 3. 直線経路 (1 cm 刻みの IK) で下降し、物体の幅に合わせてグリッパを閉じて把持
-4. 持ち上げ → トレイの位置まで移動 → 下降して離す → スタート位置へ戻る
+4. 持ち上げ → 他の物の上を通れるように胴 (リフト) を上げてトレイの位置まで移動 → 胴を戻して下降し、離す → スタート位置へ戻る
 
 GE103IN グリッパは「固定爪 + 四節リンクで動く指」の構造で、指と掌の位置関係から物体の上部をつまむ形になります。
 シミュレーション上の把持は、指を物体に合わせて閉じたうえで物体を手首リンクに固定する方式 (Gazebo でよく使われる grasp attach) で、物理接触だけで保持するより安定します。
@@ -194,7 +202,8 @@ python3 galbot_s1_description/tools/import_upstream.py /tmp/galbot_s1_descriptio
 
 GitHub Actions (`.github/workflows/ci.yml`) で Noetic と Jazzy の Docker イメージをビルドし、
 シミュレータを画面なしで起動して「走行・手先移動・グリッパ・全自動デモ (右腕) ・左腕での把持と戻し・リセット」まで
-Web UI と同じコマンドで実行して確認しています。Web UI のスクリーンショットとカメラ画像は Actions の成果物 (artifact) に保存されます。
+Web UI と同じコマンドで実行して確認しています (触っていない物体が動いていないかもチェック)。
+Web UI のスクリーンショット、カメラ画像、起動ログは Actions の成果物 (artifact) `sim-noetic` / `sim-jazzy` に保存されます。
 
 ## トラブルシューティング
 
