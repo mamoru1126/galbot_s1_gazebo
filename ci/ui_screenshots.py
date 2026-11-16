@@ -11,8 +11,11 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else 'ci_out'
 
 
 async def main():
-    deadline = time.time() + 1800
+    deadline = time.time() + 2700
+    done = os.path.join(OUT, 'result.json')
     while not os.path.exists(os.path.join(OUT, 'ready')) and time.time() < deadline:
+        if os.path.exists(done):  # bring-up failed, nothing to screenshot
+            return
         await asyncio.sleep(2)
     async with async_playwright() as p:
         exe = '/usr/bin/google-chrome' if os.path.exists('/usr/bin/google-chrome') else None

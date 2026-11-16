@@ -9,6 +9,8 @@
     * wheel collisions are spheres (r = 0.0827 m)
     * mimic tags are emitted only when use_mimic is true
     * zero-mass inertial blocks removed (all of them are fixed-joint children)
+    * joints renamed (name clashed with a link, invalid in SDF): right_fixed_contact_link -> right_fixed_contact_joint
+    * inertia made physically valid (triangle inequality) for: right_active_link2, left_active_link2
     * simulation limit overrides: wheel_driving_joint1 velocity=30, wheel_driving_joint2 velocity=30, wheel_driving_joint3 velocity=30, wheel_driving_joint4 velocity=30, wheel_steering_joint1 velocity=6, wheel_steering_joint2 velocity=6, wheel_steering_joint3 velocity=6, wheel_steering_joint4 velocity=6, torso_lift_joint1 effort=5000
 -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
@@ -601,7 +603,7 @@
       <inertial>
         <origin xyz="0.01164240637 0.00249500398 0.01517161523" rpy="0 0 0"/>
         <mass value="0.07548248"/>
-        <inertia ixx="7.798716588e-05" ixy="5.1716641e-06" ixz="2.425498752e-05" iyy="8.701457658e-05" iyz="1.249373671e-05" izz="2.604813454e-05"/>
+        <inertia ixx="7.840810657e-05" ixy="5.337097412e-06" ixz="2.312908556e-05" iyy="8.707959329e-05" iyz="1.205124755e-05" izz="2.905961636e-05"/>
       </inertial>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -650,7 +652,7 @@
       </xacro:if>
     </joint>
     <link name="right_fixed_contact_link"/>
-    <joint name="right_fixed_contact_link" type="fixed">
+    <joint name="right_fixed_contact_joint" type="fixed">
       <origin xyz="0.08995 0.03435 -0.0979" rpy="1.570796327 1.570796327 0"/>
       <parent link="right_gripper_base_link"/>
       <child link="right_fixed_contact_link"/>
@@ -920,7 +922,7 @@
       <inertial>
         <origin xyz="0.01164240639 0.00249500416 -0.01517161529" rpy="0 0 0"/>
         <mass value="0.07548248"/>
-        <inertia ixx="7.798716661e-05" ixy="5.17166431e-06" ixz="2.425498773e-05" iyy="8.701457704e-05" iyz="1.249373703e-05" izz="2.604813505e-05"/>
+        <inertia ixx="7.840810733e-05" ixy="5.337097638e-06" ixz="2.312908568e-05" iyy="8.707959376e-05" iyz="1.205124783e-05" izz="2.90596171e-05"/>
       </inertial>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>

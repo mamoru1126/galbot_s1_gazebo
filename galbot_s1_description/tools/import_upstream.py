@@ -320,9 +320,49 @@ def _num(v):
     return ('%.10g' % float(v))
 
 
+def repair_inertia(ixx, ixy, ixz, iyy, iyz, izz):
+    """Make an inertia tensor physically valid (positive definite and the
+    principal moments satisfy the triangle inequality). Returns (values, changed)."""
+    M = np.array([[ixx, ixy, ixz], [ixy, iyy, iyz], [ixz, iyz, izz]])
+    w, V = np.linalg.eigh(M)
+    w = np.maximum(w, 1e-9)
+    changed = False
+    for _ in range(3):
+        order = np.argsort(w)
+        a, b, c = w[order]
+        if a + b < c * (1.0 + 1e-6):
+            w[order[0]] = c * (1.0 + 1e-4) - b
+            changed = True
+    if not changed:
+        return (ixx, ixy, ixz, iyy, iyz, izz), False
+    R = V @ np.diag(w) @ V.T
+    return (R[0, 0], R[0, 1], R[0, 2], R[1, 1], R[1, 2], R[2, 2]), True
+
+
 def generate_body_xacro(urdf_path, wheel_radius, ground_offset):
     src = ET.parse(urdf_path).getroot()
     robot_name = src.get('name')
+    link_names = {l.get('name') for l in src.findall('link')}
+    # Upstream names one joint like its child link (right_fixed_contact_link);
+    # SDF requires unique frame names, so such joints get a "_joint" name.
+    joint_rename = {}
+    for j in src.findall('joint'):
+        if j.get('name') in link_names:
+            new = j.get('name')
+            new = new[:-5] + '_joint' if new.endswith('_link') else new + '_joint'
+            joint_rename[j.get('name')] = new
+    repaired = []
+    for l in src.findall('link'):
+        ine = l.find('inertial')
+        if ine is None or float(ine.find('mass').get('value')) <= 0.0:
+            continue
+        I = ine.find('inertia')
+        vals = [float(I.get(k)) for k in ('ixx', 'ixy', 'ixz', 'iyy', 'iyz', 'izz')]
+        fixed, changed = repair_inertia(*vals)
+        if changed:
+            for k, v in zip(('ixx', 'ixy', 'ixz', 'iyy', 'iyz', 'izz'), fixed):
+                I.set(k, '%.10g' % v)
+            repaired.append(l.get('name'))
     lines = []
     w = lines.append
     w('<?xml version="1.0"?>')
@@ -336,6 +376,11 @@ def generate_body_xacro(urdf_path, wheel_radius, ground_offset):
     w('    * wheel collisions are spheres (r = %.4f m)' % wheel_radius)
     w('    * mimic tags are emitted only when use_mimic is true')
     w('    * zero-mass inertial blocks removed (all of them are fixed-joint children)')
+    if joint_rename:
+        w('    * joints renamed (name clashed with a link, invalid in SDF): %s' % ', '.join(
+            '%s -> %s' % kv for kv in joint_rename.items()))
+    if repaired:
+        w('    * inertia made physically valid (triangle inequality) for: %s' % ', '.join(repaired))
     w('    * simulation limit overrides: %s' % ', '.join(
         '%s %s' % (j, ' '.join('%s=%g' % kv for kv in v.items())) for j, v in LIMIT_OVERRIDES.items()))
     w('-->')
@@ -398,7 +443,7 @@ def generate_body_xacro(urdf_path, wheel_radius, ground_offset):
                 w('      </collision>')
             w('    </link>')
         elif el.tag == 'joint':
-            name = el.get('name')
+            name = joint_rename.get(el.get('name'), el.get('name'))
             jtype = el.get('type')
             w('    <joint name="%s" type="%s">' % (name, jtype))
             w('      ' + origin_str(el))

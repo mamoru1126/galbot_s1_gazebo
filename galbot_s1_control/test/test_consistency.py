@@ -67,3 +67,26 @@ def test_worlds_match_scene(src):
             pose = [float(v) for v in models[obj.name].find('pose').text.split()]
             assert abs(pose[0] - obj.position[0]) < 1e-6 and abs(pose[1] - obj.position[1]) < 1e-6
         assert scene.table_name in models
+
+
+def _check_model(urdf):
+    import numpy as np
+    root = ET.fromstring(urdf)
+    names = [l.get('name') for l in root.findall('link')] + [j.get('name') for j in root.findall('joint')]
+    dup = sorted({n for n in names if names.count(n) > 1})
+    assert not dup, 'link/joint names must be unique for SDF: %s' % dup
+    for link in root.findall('link'):
+        ine = link.find('inertial')
+        if ine is None:
+            continue
+        I = ine.find('inertia')
+        g = {k: float(I.get(k)) for k in ('ixx', 'ixy', 'ixz', 'iyy', 'iyz', 'izz')}
+        M = np.array([[g['ixx'], g['ixy'], g['ixz']], [g['ixy'], g['iyy'], g['iyz']],
+                      [g['ixz'], g['iyz'], g['izz']]])
+        e = np.sort(np.linalg.eigvalsh(M))
+        assert e[0] > 0 and e[0] + e[1] >= e[2], 'invalid inertia: %s %s' % (link.get('name'), e)
+
+
+def test_model_valid_for_sdf(gz_urdf, classic_urdf, description_urdf):
+    for urdf in (gz_urdf, classic_urdf, description_urdf):
+        _check_model(urdf)

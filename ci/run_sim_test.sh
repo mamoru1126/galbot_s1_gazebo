@@ -19,13 +19,13 @@ RC=${PIPESTATUS[0]}
 {
   echo "==== diagnostics ===="
   if [ "${ROS_VERSION}" = "1" ]; then
-    rosnode list
-    rostopic list
-    rosservice call /controller_manager/list_controllers
+    timeout 20 rosnode list
+    timeout 20 rostopic list
+    timeout 20 rosservice call /controller_manager/list_controllers
   else
-    ros2 node list
-    ros2 topic list
-    ros2 control list_controllers
+    timeout 20 ros2 node list
+    timeout 20 ros2 topic list
+    timeout 30 ros2 control list_controllers
   fi
 } > "$OUT/diagnostics.log" 2>&1
 
