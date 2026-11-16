@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!-- Gazebo Classic 11 (ROS 1 Noetic) extensions: ros_control, planar base, cameras -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="galbot_classic_transmission" params="joint iface">
+    <transmission name="${joint}_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${joint}">
+        <hardwareInterface>hardware_interface/${iface}</hardwareInterface>
+      </joint>
+      <actuator name="${joint}_actuator">
+        <hardwareInterface>hardware_interface/${iface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+  <xacro:macro name="galbot_classic_arm_transmissions" params="side">
+    <xacro:galbot_classic_transmission joint="${side}_arm_joint1" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_arm_joint2" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_arm_joint3" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_arm_joint4" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_arm_joint5" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_arm_joint6" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_arm_joint7" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_active_joint1" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_active_joint2" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="${side}_passive_joint" iface="PositionJointInterface"/>
+  </xacro:macro>
+
+  <xacro:macro name="galbot_classic_wheel_transmissions" params="n">
+    <xacro:galbot_classic_transmission joint="wheel_steering_joint${n}" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="wheel_driving_joint${n}" iface="VelocityJointInterface"/>
+  </xacro:macro>
+
+  <xacro:macro name="galbot_classic_camera" params="name width height hfov rate">
+    <gazebo reference="${name}_link">
+      <sensor type="camera" name="${name}">
+        <always_on>true</always_on>
+        <update_rate>${rate}</update_rate>
+        <visualize>false</visualize>
+        <camera name="${name}">
+          <horizontal_fov>${hfov}</horizontal_fov>
+          <image>
+            <width>${width}</width>
+            <height>${height}</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.03</near>
+            <far>20.0</far>
+          </clip>
+        </camera>
+        <plugin name="${name}_plugin" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>galbot/${name}</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>${name}_optical_frame</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="galbot_s1_classic" params="cameras">
+    <xacro:galbot_classic_transmission joint="torso_lift_joint1" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="head_joint1" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_transmission joint="head_joint2" iface="PositionJointInterface"/>
+    <xacro:galbot_classic_arm_transmissions side="left"/>
+    <xacro:galbot_classic_arm_transmissions side="right"/>
+    <xacro:galbot_classic_wheel_transmissions n="1"/>
+    <xacro:galbot_classic_wheel_transmissions n="2"/>
+    <xacro:galbot_classic_wheel_transmissions n="3"/>
+    <xacro:galbot_classic_wheel_transmissions n="4"/>
+
+    <gazebo>
+      <!-- Position joints without PID gains are set kinematically every step,
+           which keeps the 7-DoF arms stable without tuning. -->
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>true</legacyModeNS>
+      </plugin>
+      <!-- planar (holonomic) base: sets the velocity of the root link only -->
+      <plugin name="galbot_planar_base" filename="libgalbot_planar_base_classic.so">
+        <link>base_footprint</link>
+        <commandTopic>/galbot/base/cmd_vel</commandTopic>
+        <odometryTopic>/galbot/ground_truth/odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+        <odometryRate>50</odometryRate>
+        <commandTimeout>0.5</commandTimeout>
+      </plugin>
+    </gazebo>
+
+    <xacro:if value="${cameras}">
+      <xacro:galbot_classic_camera name="head_camera" width="640" height="480" hfov="1.2" rate="15"/>
+      <xacro:galbot_classic_camera name="right_wrist_camera" width="424" height="240" hfov="1.5" rate="10"/>
+      <xacro:galbot_classic_camera name="left_wrist_camera" width="424" height="240" hfov="1.5" rate="10"/>
+    </xacro:if>
+  </xacro:macro>
+</robot>

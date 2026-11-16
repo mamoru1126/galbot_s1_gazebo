@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+  Galbot S1 for simulation.
+
+  xacro args
+    sim              : classic (Gazebo Classic 11 / ROS 1) | gz (Gazebo Harmonic / ROS 2)
+    cameras          : true | false  (head + wrist cameras)
+    controllers_file : ros2_control parameter file (gz only)
+    mesh_uri         : prefix of the mesh files
+-->
+<robot name="galbot_s1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="sim" default="gz"/>
+  <xacro:arg name="cameras" default="true"/>
+  <xacro:arg name="controllers_file" default="$(find galbot_s1_gazebo)/config/ros2_controllers.yaml"/>
+  <xacro:arg name="mesh_uri" default="file://$(find galbot_s1_description)/meshes"/>
+
+  <xacro:include filename="$(find galbot_s1_description)/urdf/galbot_s1_body.xacro"/>
+  <xacro:include filename="$(find galbot_s1_description)/urdf/galbot_s1_sensors.xacro"/>
+  <xacro:include filename="$(find galbot_s1_gazebo)/urdf/galbot_s1_classic.xacro"/>
+  <xacro:include filename="$(find galbot_s1_gazebo)/urdf/galbot_s1_gz.xacro"/>
+
+  <!-- mimic joints are commanded explicitly by the gripper controllers in simulation -->
+  <xacro:galbot_s1_body mesh_uri="$(arg mesh_uri)" use_mimic="false"/>
+  <xacro:galbot_s1_sensors/>
+
+  <!-- frictionless wheels: the base is moved as a planar body (like the official
+       MuJoCo model), the wheels are only animated -->
+  <xacro:macro name="galbot_s1_wheel_surface" params="n">
+    <gazebo reference="wheel_driving_link${n}">
+      <mu1>0.0</mu1>
+      <mu2>0.0</mu2>
+    </gazebo>
+  </xacro:macro>
+  <xacro:galbot_s1_wheel_surface n="1"/>
+  <xacro:galbot_s1_wheel_surface n="2"/>
+  <xacro:galbot_s1_wheel_surface n="3"/>
+  <xacro:galbot_s1_wheel_surface n="4"/>
+
+  <xacro:if value="${'$(arg sim)' == 'classic'}">
+    <xacro:galbot_s1_classic cameras="$(arg cameras)"/>
+  </xacro:if>
+  <xacro:if value="${'$(arg sim)' == 'gz'}">
+    <xacro:galbot_s1_gz cameras="$(arg cameras)" controllers_file="$(arg controllers_file)"/>
+  </xacro:if>
+</robot>

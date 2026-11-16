@@ -1,0 +1,7 @@
+.git
+**/__pycache__
+build
+install
+log
+devel
+ci_out

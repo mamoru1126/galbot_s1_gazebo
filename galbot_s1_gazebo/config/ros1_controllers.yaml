@@ -1,0 +1,68 @@
+# ROS 1 (gazebo_ros_control) controllers. Generated from galbot_s1_control/robot_config.py.
+# Position joints have no PID gains -> gazebo_ros_control sets them kinematically.
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+left_arm_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - left_arm_joint1
+    - left_arm_joint2
+    - left_arm_joint3
+    - left_arm_joint4
+    - left_arm_joint5
+    - left_arm_joint6
+    - left_arm_joint7
+
+right_arm_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - right_arm_joint1
+    - right_arm_joint2
+    - right_arm_joint3
+    - right_arm_joint4
+    - right_arm_joint5
+    - right_arm_joint6
+    - right_arm_joint7
+
+left_gripper_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - left_active_joint1
+    - left_active_joint2
+    - left_passive_joint
+
+right_gripper_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - right_active_joint1
+    - right_active_joint2
+    - right_passive_joint
+
+torso_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - torso_lift_joint1
+
+head_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - head_joint1
+    - head_joint2
+
+steering_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - wheel_steering_joint1
+    - wheel_steering_joint2
+    - wheel_steering_joint3
+    - wheel_steering_joint4
+
+wheel_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+    - wheel_driving_joint1
+    - wheel_driving_joint2
+    - wheel_driving_joint3
+    - wheel_driving_joint4

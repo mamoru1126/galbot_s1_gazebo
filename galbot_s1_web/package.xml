@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>galbot_s1_web</name>
+  <version>0.1.0</version>
+  <description>
+    Browser console for Galbot S1 (drive, arms, gripper, torso, head, cameras, pick-and-place
+    demo) over rosbridge. Plain HTML/JS without external libraries - works on ROS 1 and ROS 2.
+  </description>
+  <maintainer email="mamoru1126@users.noreply.github.com">mamoru1126</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
+  <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
+
+  <exec_depend>rosbridge_server</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">launch_ros</exec_depend>
+
+  <export>
+    <build_type condition="$ROS_VERSION == 1">catkin</build_type>
+    <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
+  </export>
+</package>

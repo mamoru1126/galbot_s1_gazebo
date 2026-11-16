@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+  ROS 1 Noetic + Gazebo Classic 11: Galbot S1 table demo with web UI.
+
+    roslaunch galbot_s1_gazebo sim.launch                 # Gazebo GUI + web UI
+    roslaunch galbot_s1_gazebo sim.launch gui:=false      # headless (web UI only)
+
+  Web UI: http://<host>:8000   (rosbridge ws://<host>:9090)
+-->
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="cameras" default="true"/>
+  <arg name="web" default="true"/>
+  <arg name="web_port" default="8000"/>
+  <arg name="rosbridge_port" default="9090"/>
+  <arg name="rviz" default="false"/>
+  <arg name="world" default="$(find galbot_s1_gazebo)/worlds/table_scene.world"/>
+  <arg name="scene_file" default="$(find galbot_s1_gazebo)/config/scene.yaml"/>
+
+  <param name="robot_description"
+         command="$(find xacro)/xacro '$(find galbot_s1_gazebo)/urdf/galbot_s1_sim.urdf.xacro' sim:=classic cameras:=$(arg cameras)"/>
+
+  <!-- start paused so the initial joint positions can be applied before physics runs -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world)"/>
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="use_sim_time" value="true"/>
+  </include>
+
+  <node name="spawn_galbot_s1" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -param robot_description -model galbot_s1 -x 0 -y 0 -z 0.002
+              -J torso_lift_joint1 0.2 -J head_joint1 0.0 -J head_joint2 -0.35
+              -J right_arm_joint1 -1.275 -J right_arm_joint2 -1.355 -J right_arm_joint3 0.86
+              -J right_arm_joint4 1.737 -J right_arm_joint5 1.659 -J right_arm_joint6 0.267
+              -J right_arm_joint7 -1.164
+              -J left_arm_joint1 1.275 -J left_arm_joint2 1.355 -J left_arm_joint3 -0.86
+              -J left_arm_joint4 -1.737 -J left_arm_joint5 -1.659 -J left_arm_joint6 -0.267
+              -J left_arm_joint7 1.164
+              -unpause"/>
+
+  <rosparam file="$(find galbot_s1_gazebo)/config/ros1_controllers.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen"
+        args="joint_state_controller left_arm_controller right_arm_controller
+              left_gripper_controller right_gripper_controller torso_controller head_controller
+              steering_controller wheel_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <!-- galbot_s1_control nodes -->
+  <node name="galbot_base_controller" pkg="galbot_s1_control" type="base_controller.py" output="screen"/>
+  <node name="galbot_commander" pkg="galbot_s1_control" type="commander.py" output="screen">
+    <param name="scene_file" value="$(arg scene_file)"/>
+  </node>
+  <node if="$(arg cameras)" name="galbot_camera_relay" pkg="galbot_s1_control" type="camera_relay.py"
+        output="screen"/>
+
+  <include if="$(arg web)" file="$(find galbot_s1_web)/launch/web.launch">
+    <arg name="port" value="$(arg web_port)"/>
+    <arg name="rosbridge_port" value="$(arg rosbridge_port)"/>
+  </include>
+
+  <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find galbot_s1_description)/rviz/galbot_s1_ros1.rviz -f odom"/>
+</launch>

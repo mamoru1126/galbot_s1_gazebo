@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- ROS 1: rosbridge + web console.  roslaunch galbot_s1_web web.launch -->
+<launch>
+  <arg name="port" default="8000"/>
+  <arg name="rosbridge_port" default="9090"/>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+    <arg name="port" value="$(arg rosbridge_port)"/>
+  </include>
+  <node name="galbot_web_server" pkg="galbot_s1_web" type="web_server.py" output="screen"
+        args="--root $(find galbot_s1_web)/web --port $(arg port) --rosbridge-port $(arg rosbridge_port)"/>
+</launch>

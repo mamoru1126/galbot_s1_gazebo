@@ -1,0 +1,95 @@
+# ROS 2 (gz_ros2_control) controllers. Generated from galbot_s1_control/robot_config.py.
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    left_arm_controller:
+      type: position_controllers/JointGroupPositionController
+
+    right_arm_controller:
+      type: position_controllers/JointGroupPositionController
+
+    left_gripper_controller:
+      type: position_controllers/JointGroupPositionController
+
+    right_gripper_controller:
+      type: position_controllers/JointGroupPositionController
+
+    torso_controller:
+      type: position_controllers/JointGroupPositionController
+
+    head_controller:
+      type: position_controllers/JointGroupPositionController
+
+    steering_controller:
+      type: position_controllers/JointGroupPositionController
+
+    wheel_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+left_arm_controller:
+  ros__parameters:
+    joints:
+      - left_arm_joint1
+      - left_arm_joint2
+      - left_arm_joint3
+      - left_arm_joint4
+      - left_arm_joint5
+      - left_arm_joint6
+      - left_arm_joint7
+
+right_arm_controller:
+  ros__parameters:
+    joints:
+      - right_arm_joint1
+      - right_arm_joint2
+      - right_arm_joint3
+      - right_arm_joint4
+      - right_arm_joint5
+      - right_arm_joint6
+      - right_arm_joint7
+
+left_gripper_controller:
+  ros__parameters:
+    joints:
+      - left_active_joint1
+      - left_active_joint2
+      - left_passive_joint
+
+right_gripper_controller:
+  ros__parameters:
+    joints:
+      - right_active_joint1
+      - right_active_joint2
+      - right_passive_joint
+
+torso_controller:
+  ros__parameters:
+    joints:
+      - torso_lift_joint1
+
+head_controller:
+  ros__parameters:
+    joints:
+      - head_joint1
+      - head_joint2
+
+steering_controller:
+  ros__parameters:
+    joints:
+      - wheel_steering_joint1
+      - wheel_steering_joint2
+      - wheel_steering_joint3
+      - wheel_steering_joint4
+
+wheel_controller:
+  ros__parameters:
+    joints:
+      - wheel_driving_joint1
+      - wheel_driving_joint2
+      - wheel_driving_joint3
+      - wheel_driving_joint4

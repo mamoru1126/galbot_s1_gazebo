@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!-- Gazebo Harmonic (gz-sim 8, ROS 2 Jazzy) extensions: ros2_control, planar base, cameras -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- initial_value = "ready" pose, keep in sync with config/initial_positions.yaml
+       (checked by galbot_s1_control/test/test_consistency.py) -->
+  <xacro:macro name="galbot_gz_position_joint" params="name init:=0.0">
+    <joint name="${name}">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">${init}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="galbot_gz_velocity_joint" params="name">
+    <joint name="${name}">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- s = +1 for the right arm, -1 for the left arm (the ready pose is mirrored) -->
+  <xacro:macro name="galbot_gz_arm_joints" params="side s">
+    <xacro:galbot_gz_position_joint name="${side}_arm_joint1" init="${s * -1.275}"/>
+    <xacro:galbot_gz_position_joint name="${side}_arm_joint2" init="${s * -1.355}"/>
+    <xacro:galbot_gz_position_joint name="${side}_arm_joint3" init="${s * 0.86}"/>
+    <xacro:galbot_gz_position_joint name="${side}_arm_joint4" init="${s * 1.737}"/>
+    <xacro:galbot_gz_position_joint name="${side}_arm_joint5" init="${s * 1.659}"/>
+    <xacro:galbot_gz_position_joint name="${side}_arm_joint6" init="${s * 0.267}"/>
+    <xacro:galbot_gz_position_joint name="${side}_arm_joint7" init="${s * -1.164}"/>
+    <xacro:galbot_gz_position_joint name="${side}_active_joint1"/>
+    <xacro:galbot_gz_position_joint name="${side}_active_joint2"/>
+    <xacro:galbot_gz_position_joint name="${side}_passive_joint"/>
+  </xacro:macro>
+
+  <xacro:macro name="galbot_gz_camera" params="name width height hfov rate">
+    <gazebo reference="${name}_link">
+      <sensor name="${name}" type="camera">
+        <always_on>true</always_on>
+        <update_rate>${rate}</update_rate>
+        <visualize>false</visualize>
+        <topic>/galbot/${name}/image_raw</topic>
+        <camera>
+          <horizontal_fov>${hfov}</horizontal_fov>
+          <image>
+            <width>${width}</width>
+            <height>${height}</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.03</near>
+            <far>20.0</far>
+          </clip>
+        </camera>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="galbot_s1_gz" params="cameras controllers_file">
+    <ros2_control name="GalbotS1GzSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <xacro:galbot_gz_position_joint name="torso_lift_joint1" init="0.2"/>
+      <xacro:galbot_gz_position_joint name="head_joint1" init="0.0"/>
+      <xacro:galbot_gz_position_joint name="head_joint2" init="-0.35"/>
+      <xacro:galbot_gz_arm_joints side="left" s="-1"/>
+      <xacro:galbot_gz_arm_joints side="right" s="1"/>
+      <xacro:galbot_gz_position_joint name="wheel_steering_joint1"/>
+      <xacro:galbot_gz_position_joint name="wheel_steering_joint2"/>
+      <xacro:galbot_gz_position_joint name="wheel_steering_joint3"/>
+      <xacro:galbot_gz_position_joint name="wheel_steering_joint4"/>
+      <xacro:galbot_gz_velocity_joint name="wheel_driving_joint1"/>
+      <xacro:galbot_gz_velocity_joint name="wheel_driving_joint2"/>
+      <xacro:galbot_gz_velocity_joint name="wheel_driving_joint3"/>
+      <xacro:galbot_gz_velocity_joint name="wheel_driving_joint4"/>
+    </ros2_control>
+
+    <gazebo>
+      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>${controllers_file}</parameters>
+      </plugin>
+      <!-- planar (holonomic) base: velocity of the model's root link -->
+      <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+        <topic>/galbot/base/cmd_vel</topic>
+      </plugin>
+      <!-- ground truth pose of the base (world frame == odom) -->
+      <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+        <odom_frame>odom</odom_frame>
+        <robot_base_frame>base_footprint</robot_base_frame>
+        <odom_topic>/galbot/ground_truth/odom</odom_topic>
+        <tf_topic>/galbot/ground_truth/tf</tf_topic>
+        <odom_publish_frequency>50</odom_publish_frequency>
+        <dimensions>3</dimensions>
+      </plugin>
+    </gazebo>
+
+    <xacro:if value="${cameras}">
+      <xacro:galbot_gz_camera name="head_camera" width="640" height="480" hfov="1.2" rate="15"/>
+      <xacro:galbot_gz_camera name="right_wrist_camera" width="424" height="240" hfov="1.5" rate="10"/>
+      <xacro:galbot_gz_camera name="left_wrist_camera" width="424" height="240" hfov="1.5" rate="10"/>
+    </xacro:if>
+  </xacro:macro>
+</robot>
