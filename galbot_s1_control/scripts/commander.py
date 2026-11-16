@@ -252,6 +252,9 @@ class Commander(object):
         def done():
             self.check_cancel()
             with self.lock:
+                current = self.paths.get(group)
+                if current is not None and current is not path:
+                    return True  # superseded by a newer command
                 if self.node.now() - path.t0 < path.duration:
                     return False
                 err = max(abs(self.joints.get(nme, 0.0) - g) for nme, g in zip(names, path.goal))
@@ -259,6 +262,8 @@ class Commander(object):
 
         if not self.node.wait_for(done, limit):
             with self.lock:
+                if self.paths.get(group) not in (None, path):
+                    return
                 err = max(abs(self.joints.get(nme, 0.0) - g) for nme, g in zip(names, path.goal))
             self.log('%s: target not reached (err %.3f) - continuing' % (group, err), level='warn')
 
@@ -444,6 +449,31 @@ class Commander(object):
             self.drive_active = False
         self.node.sleep(0.3)
 
+    def carry_clearance(self, held):
+        """Height the bottom of a carried object must have to pass over the others."""
+        others = [o.height for o in self.scene.objects if o.name != held]
+        return self.scene.table_height + (max(others) if others else 0.0) + 0.05
+
+    def raise_torso_for_carry(self, name):
+        obj = self.scene.by_name[name]
+        bottom = self.object_matrix(name)[2, 3] - obj.height / 2.0
+        need = self.carry_clearance(name) - bottom
+        if need <= 0.0:
+            return
+        with self.lock:
+            torso = self.setpoint['torso_lift_joint1']
+        target = self.model.clamp('torso_lift_joint1', torso + need)
+        self.step('胴を %.0f cm 上げて他の物の上を通します' % ((target - torso) * 100))
+        self.move_group('torso', [target], wait=True)
+
+    def lower_torso_to_ready(self):
+        ready = rc.POSES['ready']['torso'][0]
+        with self.lock:
+            torso = self.setpoint['torso_lift_joint1']
+        if torso > ready + 1e-3:
+            self.step('胴を下げる')
+            self.move_group('torso', [ready], wait=True)
+
     def base_goal_for(self, side, target_xy):
         sx, sy = self.planner.SWEET_SPOT[side]
         gx, gy = target_xy[0] - sx, target_xy[1] - sy
@@ -543,6 +573,7 @@ class Commander(object):
         if z_now < z0 + 0.05:
             raise TaskError('持ち上げを確認できませんでした (dz=%.3f)' % (z_now - z0))
         self.log('%s を持ち上げました (dz=%.3f m)' % (obj.label, z_now - z0))
+        self.raise_torso_for_carry(object)
 
     def task_place(self, arm='auto', target='tray', x=None, y=None):
         sides = [s for s in SIDES if self.holding[s]]
@@ -569,6 +600,7 @@ class Commander(object):
         gx, gy, gyaw = self.base_goal_for(side, (tx, ty))
         self.step('%s を%sへ運びます' % (obj.label, where))
         self.drive_to(gx, gy, gyaw)
+        self.lower_torso_to_ready()
         T_wb = self.base_matrix()
         obj_yaw = yaw_of(self.object_matrix(name))
         T_w_obj = planar_pose_matrix(tx, ty, obj_yaw, surface + obj.height / 2.0 + 0.004)

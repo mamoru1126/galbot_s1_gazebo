@@ -20,7 +20,7 @@ table:
   top_thickness: 0.04
 
 overview_camera:                  # fixed camera watching robot + table (web UI "俯瞰")
-  pose: [-0.4, -1.7, 2.0, 0.0, 0.49, 0.815]   # x y z roll pitch yaw
+  pose: [-1.2, -2.2, 2.3, 0.0, 0.50, 0.858]   # x y z roll pitch yaw (looks at ~(0.7, 0, 0.7))
   width: 640
   height: 480
   hfov: 1.1

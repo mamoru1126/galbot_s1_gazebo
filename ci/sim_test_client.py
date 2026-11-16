@@ -161,8 +161,10 @@ def main():
                abs(can.get('y', 99) - tray['center'][1]) < tray['size'][1] / 2 and
                abs(can.get('z', 0) - (st['scene']['table']['size'][2] + tray['size'][2] + 0.06)) < 0.03)
     home = st['base'] and math.hypot(st['base']['x'], st['base']['y']) < 0.1
+    undisturbed = untouched(st, ('green_bottle', 'blue_box'))
     ok_all &= c.record('demo_pick_place_red_can', t.get('state') == 'done' and on_tray and home,
                        task=t, red_can=can, base=st['base'], log=st.get('log', [])[-8:])
+    ok_all &= c.record('other_objects_undisturbed', not undisturbed, moved=undisturbed)
     c.save_frames('90_after_demo')
 
     # ---------------------------------------------------------------- 5 left arm
@@ -179,10 +181,35 @@ def main():
     back = abs(box.get('x', 9) - 1.45) < 0.03 and abs(box.get('y', 9) - 0.35) < 0.03 and \
         abs(box.get('z', 0) - (st['scene']['table']['size'][2] + 0.05)) < 0.03
     ok_all &= c.record('place_blue_box_origin', t.get('state') == 'done' and back, task=t, blue_box=box)
+    moved = untouched(st, ('green_bottle',))
+    can = st['objects'].get('red_can', {})
+    still_on_tray = abs(can.get('x', 9) - tray['center'][0]) < 0.08 and abs(can.get('y', 9) - tray['center'][1]) < 0.08
+    ok_all &= c.record('scene_intact_after_left_arm', not moved and still_on_tray, moved=moved, red_can=can)
 
     t = c.run_task({'type': 'reset_scene'}, 300)
     ok_all &= c.record('reset_scene', t.get('state') == 'done', task=t)
     return finish(c, ok_all)
+
+
+def untouched(st, names):
+    """Names of objects that moved away from their spawn pose (should be empty)."""
+    moved = []
+    spawn = {o['name']: o for o in st['scene']['objects']}
+    for name in names:
+        p = st['objects'].get(name)
+        o = spawn.get(name)
+        if p is None or o is None:
+            moved.append(name)
+            continue
+        z0 = st['scene']['table']['size'][2] + o['size'][2] / 2.0
+        if 'position' in o:
+            x0, y0 = o['position']
+            if math.hypot(p['x'] - x0, p['y'] - y0) > 0.02:
+                moved.append(name)
+                continue
+        if abs(p['z'] - z0) > 0.015:
+            moved.append(name)
+    return moved
 
 
 def finish(c, ok):

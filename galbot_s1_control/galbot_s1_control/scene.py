@@ -92,6 +92,6 @@ class Scene(object):
             'table': {'center': self.table_center, 'size': self.table_size},
             'tray': self.tray,
             'objects': [{'name': o.name, 'label': o.label, 'shape': o.shape, 'size': o.size,
-                         'color': o.color} for o in self.objects],
+                         'color': o.color, 'position': o.position} for o in self.objects],
             'robot_spawn': self.robot_spawn,
         }
