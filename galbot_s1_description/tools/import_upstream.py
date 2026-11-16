@@ -271,12 +271,20 @@ def glb_to_dae(glb_path, dae_path, texture_prefix):
             sub(verts, 'input', {'semantic': 'POSITION', 'source': '#' + pos_id})
             tri = sub(m_el, 'triangles', {'material': materials[mat_index]['id'],
                                           'count': str(len(idx) // 3)})
+            # One offset per input (like Blender exports). The Gazebo Classic /
+            # gz-common loaders assume distinct offsets: sharing one index for
+            # position, normal and uv makes them read the index list with the
+            # wrong stride (and crash).
+            n_inputs = 1
             sub(tri, 'input', {'semantic': 'VERTEX', 'source': '#' + gid + '-vertices', 'offset': '0'})
             if nrm_id:
-                sub(tri, 'input', {'semantic': 'NORMAL', 'source': '#' + nrm_id, 'offset': '0'})
+                sub(tri, 'input', {'semantic': 'NORMAL', 'source': '#' + nrm_id, 'offset': str(n_inputs)})
+                n_inputs += 1
             if uv_id:
-                sub(tri, 'input', {'semantic': 'TEXCOORD', 'source': '#' + uv_id, 'offset': '0', 'set': '0'})
-            sub(tri, 'p').text = ' '.join(str(int(v)) for v in idx)
+                sub(tri, 'input', {'semantic': 'TEXCOORD', 'source': '#' + uv_id, 'offset': str(n_inputs),
+                                   'set': '0'})
+                n_inputs += 1
+            sub(tri, 'p').text = ' '.join(' '.join([str(int(v))] * n_inputs) for v in idx)
             scene_nodes.append((gid, materials[mat_index]))
             gi += 1
 

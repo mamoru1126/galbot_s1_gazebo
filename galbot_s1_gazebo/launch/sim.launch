@@ -20,24 +20,17 @@
   <param name="robot_description"
          command="$(find xacro)/xacro '$(find galbot_s1_gazebo)/urdf/galbot_s1_sim.urdf.xacro' sim:=classic cameras:=$(arg cameras)"/>
 
-  <!-- start paused so the initial joint positions can be applied before physics runs -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(arg world)"/>
-    <arg name="paused" value="true"/>
+    <arg name="paused" value="false"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="use_sim_time" value="true"/>
   </include>
 
+  <!-- The arms start straight out to the sides (collision free); the commander
+       moves the robot to the "ready" pose as soon as the controllers run. -->
   <node name="spawn_galbot_s1" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-urdf -param robot_description -model galbot_s1 -x 0 -y 0 -z 0.002
-              -J torso_lift_joint1 0.2 -J head_joint1 0.0 -J head_joint2 -0.35
-              -J right_arm_joint1 -1.275 -J right_arm_joint2 -1.355 -J right_arm_joint3 0.86
-              -J right_arm_joint4 1.737 -J right_arm_joint5 1.659 -J right_arm_joint6 0.267
-              -J right_arm_joint7 -1.164
-              -J left_arm_joint1 1.275 -J left_arm_joint2 1.355 -J left_arm_joint3 -0.86
-              -J left_arm_joint4 -1.737 -J left_arm_joint5 -1.659 -J left_arm_joint6 -0.267
-              -J left_arm_joint7 1.164
-              -unpause"/>
+        args="-urdf -param robot_description -model galbot_s1 -x 0 -y 0 -z 0.002"/>
 
   <rosparam file="$(find galbot_s1_gazebo)/config/ros1_controllers.yaml" command="load"/>
   <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen"
